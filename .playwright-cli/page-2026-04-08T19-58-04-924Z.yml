@@ -1,0 +1,71 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "KWSP Malaysia KWSP Malaysia Percaya pada pelaburan anda" [ref=e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - img "KWSP Malaysia" [ref=e5]
+        - generic [ref=e6]:
+          - text: KWSP Malaysia
+          - generic [ref=e7]: Percaya pada pelaburan anda
+      - generic [ref=e8]:
+        - button "Admin KWSP " [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]: Admin KWSP
+          - generic [ref=e11]: 
+        - text:    
+    - generic [ref=e12]:
+      - heading " Pengesahan Identiti (KYC)" [level=1] [ref=e13]:
+        - generic [ref=e14]: 
+        - text: Pengesahan Identiti (KYC)
+      - paragraph [ref=e15]: Muat naik dokumen yang jelas untuk mempercepat proses semakan dan membuka akses pelaburan penuh.
+    - generic [ref=e17]:
+      - paragraph [ref=e18]: Pastikan setiap fail terang, tidak kabur, dan memaparkan keseluruhan dokumen.
+      - generic [ref=e19]:
+        - generic [ref=e20]: Kad Pengenalan (Depan)
+        - generic [ref=e21]:
+          - button "Kad Pengenalan (Depan) Pilih Fail README.md Format jelas dan penuh muka hadapan IC" [active] [ref=e64]
+          - generic [ref=e23] [cursor=pointer]:
+            - generic [ref=e24]: Pilih Fail
+            - generic [ref=e25]:
+              - generic [ref=e26]: README.md
+              - generic [ref=e27]: Format jelas dan penuh muka hadapan IC
+      - generic [ref=e28]:
+        - generic [ref=e29]: Kad Pengenalan (Belakang)
+        - generic [ref=e30]:
+          - button "Kad Pengenalan (Belakang) Pilih Fail Belum ada fail dipilih Pastikan teks dan nombor IC boleh dibaca" [ref=e31]
+          - generic [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: Pilih Fail
+            - generic [ref=e34]:
+              - generic [ref=e35]: Belum ada fail dipilih
+              - generic [ref=e36]: Pastikan teks dan nombor IC boleh dibaca
+      - generic [ref=e37]:
+        - generic [ref=e38]: Selfie dengan IC
+        - generic [ref=e39]:
+          - button "Selfie dengan IC Pilih Fail Belum ada fail dipilih Wajah dan IC perlu kelihatan terang dalam satu gambar" [ref=e40]
+          - generic [ref=e41] [cursor=pointer]:
+            - generic [ref=e42]: Pilih Fail
+            - generic [ref=e43]:
+              - generic [ref=e44]: Belum ada fail dipilih
+              - generic [ref=e45]: Wajah dan IC perlu kelihatan terang dalam satu gambar
+      - button "Muat Naik Dokumen" [ref=e46] [cursor=pointer]
+  - navigation "Bottom navigation" [ref=e47]:
+    - generic [ref=e48]:
+      - link " Deposit" [ref=e49] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/deposit
+        - generic [ref=e50]: 
+        - generic [ref=e51]: Deposit
+      - link " Invest" [ref=e52] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/investment
+        - generic [ref=e53]: 
+        - generic [ref=e54]: Invest
+      - link " Home" [ref=e55] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - generic [ref=e56]: 
+        - generic [ref=e57]: Home
+      - link " Withdraw" [ref=e58] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/withdraw
+        - generic [ref=e59]: 
+        - generic [ref=e60]: Withdraw
+      - link " Transfer" [ref=e61] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e62]: 
+        - generic [ref=e63]: Transfer

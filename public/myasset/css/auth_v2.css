@@ -1,0 +1,315 @@
+/* ============================================================
+   KWSP Corporate Light — Auth Pages (Login / Register)
+   Refined card layout, micro-animations, premium inputs
+   ============================================================ */
+
+body.corporate-light {
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%) !important;
+    min-height: 100vh;
+}
+
+body.corporate-light *,
+body.corporate-light *::before,
+body.corporate-light *::after {
+    box-sizing: border-box;
+}
+
+.gmt-auth {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Card Container ── */
+.gmt-auth__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 880px;
+    width: 100%;
+    background: white !important;
+    border-radius: var(--radius-xl, 28px) !important;
+    border: 1px solid var(--border-color, #e2e8f0) !important;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02) !important;
+    overflow: hidden;
+    animation: kwspScaleIn 0.5s cubic-bezier(0, 0, 0.2, 1) both;
+}
+
+/* ── Left Panel (Branding) ── */
+.gmt-auth__left {
+    background: linear-gradient(160deg, #001D3D 0%, #003566 50%, #0B5394 100%) !important;
+    color: white !important;
+    padding: 48px 36px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.gmt-auth__left::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(255,204,0,0.06);
+}
+.gmt-auth__left::after {
+    content: '';
+    position: absolute;
+    bottom: -120px; left: -40px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(20,85,183,0.15);
+}
+
+.gmt-auth__brand {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+.gmt-auth__brand img {
+    height: 52px !important;
+    width: auto;
+    filter: none;
+    display: block;
+}
+.gmt-auth__brand b {
+    color: white !important;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+}
+.gmt-auth__brand span {
+    color: rgba(255,255,255,0.6) !important;
+    font-size: 11px;
+    display: block;
+    margin-top: 2px;
+}
+
+.gmt-auth__kicker {
+    margin-top: 32px;
+    position: relative;
+    z-index: 1;
+}
+.gmt-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #FFCC00;
+    margin-right: 8px;
+    animation: kwspPulse 2s ease-in-out infinite;
+}
+
+.gmt-auth__title {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 14px 0 0;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    position: relative;
+    z-index: 1;
+    animation: kwspFadeInUp 0.6s cubic-bezier(0, 0, 0.2, 1) 0.2s both;
+}
+
+.gmt-auth__sub {
+    color: rgba(255,255,255,0.65) !important;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 12px;
+    position: relative;
+    z-index: 1;
+    animation: kwspFadeInUp 0.6s cubic-bezier(0, 0, 0.2, 1) 0.3s both;
+}
+
+/* ── Tab Links ── */
+.gmt-tab {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    color: white !important;
+    backdrop-filter: blur(4px);
+}
+.gmt-tab:hover {
+    background: rgba(255,255,255,0.15) !important;
+    transform: translateY(-2px);
+}
+.gmt-tab.active {
+    background: white !important;
+    color: #00458C !important;
+    border-color: white !important;
+}
+
+/* ── Right Panel (Form) ── */
+.gmt-auth__right {
+    background: white !important;
+    padding: 48px 36px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: kwspFadeIn 0.5s ease 0.3s both;
+    min-width: 0;
+}
+
+.gmt-form {
+    width: 100%;
+    max-width: 100%;
+}
+.gmt-field {
+    margin-bottom: 18px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.gmt-label {
+    display: block;
+    font-weight: 600 !important;
+    font-size: 13px;
+    color: var(--text-secondary, #334155) !important;
+    margin-bottom: 7px;
+    letter-spacing: 0.01em;
+}
+
+.gmt-input {
+    width: 100%;
+    max-width: 100%;
+    padding: 13px 16px;
+    border-radius: 12px;
+    border: 1.5px solid #e2e8f0 !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    font-weight: 500;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease !important;
+    display: block;
+    min-width: 0;
+}
+.gmt-input:focus {
+    border-color: #1455B7 !important;
+    box-shadow: 0 0 0 4px rgba(20,85,183,0.08) !important;
+    background: white !important;
+}
+.gmt-input::placeholder { color: #94a3b8; }
+
+.gmt-passwrap {
+    position: relative;
+    width: 100%;
+}
+.gmt-eye {
+    position: absolute;
+    right: 14px; top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.15s ease;
+}
+.gmt-eye:hover { color: #64748b; }
+
+.gmt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+}
+.gmt-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+    cursor: pointer;
+}
+.gmt-check input[type="checkbox"] {
+    accent-color: #1455B7;
+    width: 16px; height: 16px;
+}
+
+.gmt-cta {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #00458C, #1455B7) !important;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,69,140,0.18) !important;
+    transition: all 0.3s cubic-bezier(0.25,0.1,0.25,1) !important;
+    position: relative;
+    overflow: hidden;
+}
+.gmt-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.gmt-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 28px rgba(0,69,140,0.28) !important;
+}
+.gmt-cta:hover::before { opacity: 1; }
+.gmt-cta:active {
+    transform: translateY(0) scale(0.98) !important;
+}
+
+.gmt-help {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 16px;
+    font-weight: 500;
+}
+.gmt-help a {
+    color: #1455B7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease;
+}
+.gmt-help a:hover { color: #00458C; }
+
+/* ── Error Messages ── */
+.mt-2 {
+    color: #DC2626;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .gmt-auth__card {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+    .gmt-auth__left { padding: 32px 24px !important; }
+    .gmt-auth__right { padding: 32px 24px !important; }
+    .gmt-auth__title { font-size: 22px; }
+    .gmt-row {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,47 @@
+- main [ref=e2]:
+  - region "Register" [ref=e3]:
+    - generic [ref=e4]:
+      - link "Back to home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "KWSP Malaysia" [ref=e6]
+        - generic [ref=e7]:
+          - text: KWSP Malaysia
+          - generic [ref=e8]: Daftar akaun baharu
+      - generic [ref=e9]: Sertai
+      - heading "Mulakan Pelaburan." [level=1] [ref=e11]
+      - paragraph [ref=e12]: Sertai komuniti pelabur kami yang berkembang pesat dan mula bina masa depan anda hari ini.
+      - generic [ref=e13]:
+        - link " Utama" [ref=e14] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e15]: 
+          - text: Utama
+        - link " Log Masuk" [ref=e16] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/login
+          - generic [ref=e17]: 
+          - text: Log Masuk
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: Nama Penuh
+        - textbox "Nama Penuh" [ref=e22]:
+          - /placeholder: Nama Penuh Anda
+      - generic [ref=e23]:
+        - generic [ref=e24]: E-mel
+        - textbox "E-mel" [ref=e25]:
+          - /placeholder: anda@email.com
+      - generic [ref=e26]:
+        - generic [ref=e27]: No. Telefon
+        - textbox "No. Telefon" [ref=e28]:
+          - /placeholder: +60 123456789
+      - generic [ref=e29]:
+        - generic [ref=e30]: Kata Laluan
+        - textbox "Kata Laluan" [ref=e31]:
+          - /placeholder: ••••••••
+      - generic [ref=e32]:
+        - generic [ref=e33]: Sahkan Kata Laluan
+        - textbox "Sahkan Kata Laluan" [ref=e34]:
+          - /placeholder: ••••••••
+      - button "Daftar Sekarang" [ref=e36] [cursor=pointer]
+      - paragraph [ref=e37]:
+        - text: Sudah mempunyai akaun?
+        - link "Log masuk" [ref=e38] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/login

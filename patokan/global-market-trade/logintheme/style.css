@@ -1,0 +1,195 @@
+﻿/* Minimal logintheme (simple, glass, fullscreen) */
+
+:root{
+  --card-bg: rgba(20, 25, 35, .55);
+  --card-bd: rgba(255,255,255,.20);
+  --text: #eef2ff;
+  --muted: rgba(255,255,255,.75);
+  --accent: #2ea7ff;
+  --accent2:#2ea7ff;
+  --shadow: 0 30px 80px rgba(0,0,0,.45);
+}
+
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  color: var(--text);
+}
+
+.fxt-template-layout28{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  overflow:hidden;
+  background:#0a0f18;
+}
+
+.fxt-template-layout28::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-position:center;
+  filter: saturate(1.05) contrast(1.05);
+  transform: scale(1.02);
+  z-index:0;
+}
+
+.fxt-template-layout28::after{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(1000px 650px at 50% 30%, rgba(255,255,255,.05), transparent 55%),
+              linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.6));
+  z-index:0;
+}
+
+#particles-js{
+  position:absolute; inset:0;
+  z-index:1;
+  pointer-events:none;
+  opacity:.6;
+}
+
+/* content card */
+.fxt-content{
+  position:relative;
+  z-index:2;
+  width:min(980px, 100%);
+  padding:22px;
+  border-radius:34px;
+  border: 2px solid rgba(255,255,255,.55);
+  background: rgba(0,0,0,.18);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.fxt-header{
+  text-align:center;
+  padding:10px 10px 0;
+}
+
+.fxt-logo img{
+  display:inline-block;
+  max-width: 220px;
+  height:auto;
+}
+
+.fxt-switcher-wrap{
+  list-style:none;
+  padding:0;
+  margin: 14px auto 10px;
+  display:flex;
+  justify-content:center;
+  gap:0;
+  width: min(520px, 100%);
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.fxt-switcher-wrap li{flex:1;}
+.switcher-text{
+  display:block;
+  text-align:center;
+  padding:12px 14px;
+  text-decoration:none;
+  color: rgba(255,255,255,.85);
+  font-weight:600;
+  transition:.2s;
+}
+.switcher-text:hover{color:#fff; background: rgba(255,255,255,.08);}
+.switcher-text.active{
+  color:#111;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+.fxt-form{
+  padding: 10px 22px 18px;
+}
+
+.fxt-form p{
+  margin: 10px 0 12px;
+  color: var(--muted);
+  text-align:center;
+}
+
+.form-group{margin-bottom:14px;}
+
+.form-control{
+  height:48px;
+  border-radius:12px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(0,0,0,.22);
+  color:#fff;
+  padding: 10px 14px;
+  outline:none;
+  width:100%;
+}
+.form-control:focus{
+  border-color: rgba(255,255,255,.45);
+  box-shadow: 0 0 0 4px rgba(255,138,43,.15);
+}
+::placeholder{color: rgba(255,255,255,.55);}
+
+.fxt-checkbox-area{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.checkbox{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color: rgba(255,255,255,.80);
+  font-size:14px;
+}
+.checkbox input{width:16px;height:16px;}
+
+.fxt-btn-fill{
+  border:0;
+  border-radius:10px;
+  height:48px;
+  padding:0 26px;
+  cursor:pointer;
+  font-weight:700;
+  color:#111;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  box-shadow: 0 12px 25px rgba(0,0,0,.25);
+  transition:.2s;
+}
+.fxt-btn-fill:hover{filter:brightness(1.04); transform: translateY(-1px);}
+
+/* eye toggle icon */
+.field-icon{
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,.70);
+  cursor:pointer;
+}
+.form-group{position:relative;}
+
+/* small animation helper (optional) */
+.fxt-template-animation .fxt-transformY-50{
+  transform: translateY(0);
+  opacity: 1;
+}
+.fxt-transition-delay-1{transition-delay:.05s}
+.fxt-transition-delay-2{transition-delay:.1s}
+.fxt-transition-delay-3{transition-delay:.15s}
+.fxt-transition-delay-4{transition-delay:.2s}
+.fxt-transition-delay-5{transition-delay:.25s}
+
+@media (max-width: 640px){
+  .fxt-content{border-radius:24px; padding:16px;}
+  .fxt-form{padding: 8px 12px 14px;}
+}

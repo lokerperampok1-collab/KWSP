@@ -1,0 +1,169 @@
+/* ===== GMT v2 Auth (Login/Register/Forgot) ===== */
+:root{
+  /* Dark-blue auth skin (aligned with dashboard look) */
+  --a-bg0:#050d1c;
+  --a-bg1:#07162b;
+  --a-bg2:#0a1f3a;
+  --a-card:rgba(255,255,255,.06);
+  --a-bd:rgba(255,255,255,.12);
+  --a-tx:#eef6ff;
+  --a-muted:rgba(238,246,255,.72);
+  --a-ac1:#2ea7ff;
+  --a-ac2:#00d3ff;
+  --a-shadow:0 22px 70px rgba(0,0,0,.50);
+  --a-r:22px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  color:var(--a-tx);
+  background:
+    radial-gradient(980px 560px at 16% 6%, rgba(46,167,255,.22), transparent 62%),
+    radial-gradient(980px 560px at 86% 10%, rgba(0,211,255,.14), transparent 58%),
+    linear-gradient(180deg,var(--a-bg0), var(--a-bg1) 35%, var(--a-bg2));
+  overflow-x:hidden;
+}
+
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.95}
+
+.gmt-auth{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:26px 16px;
+}
+
+.gmt-auth__card{
+  width:min(980px, 100%);
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:0;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);
+  border-radius:var(--a-r);
+  overflow:hidden;
+  box-shadow:var(--a-shadow);
+}
+
+.gmt-auth__left{
+  padding:34px 30px;
+  background:
+    radial-gradient(900px 520px at 10% 0%, rgba(124,92,252,.22), transparent 60%),
+    radial-gradient(760px 520px at 80% 10%, rgba(34,211,238,.16), transparent 58%),
+    rgba(0,0,0,.18);
+}
+
+.gmt-auth__brand{display:flex;align-items:center;gap:12px}
+.gmt-auth__brand img{height:100px;width:auto;object-fit:contain;filter:drop-shadow(0 10px 18px rgba(0,0,0,.25))}
+.gmt-auth__brand b{display:block;letter-spacing:.08em;text-transform:uppercase;font-size:19px}
+.gmt-auth__brand span{display:block;color:var(--a-muted);font-size:12px;margin-top:2px}
+
+.gmt-auth__kicker{margin:22px 0 8px;display:inline-flex;gap:10px;align-items:center}
+.gmt-dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--a-ac1),var(--a-ac2))}
+.gmt-auth__title{margin:0 0 10px;font-size:34px;line-height:1.05;font-weight:900}
+.gmt-auth__sub{margin:0;color:var(--a-muted);max-width:54ch;line-height:1.6}
+
+.gmt-auth__right{
+  padding:30px;
+  background:rgba(6,7,16,.45);
+  border-left:1px solid rgba(255,255,255,.08);
+}
+
+.gmt-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.gmt-tab{
+  height:40px;
+  padding:0 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);
+  color:var(--a-muted);
+  font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.gmt-tab.active{color:var(--a-tx);border-color:rgba(46,167,255,.42);background:rgba(46,167,255,.14)}
+
+.gmt-form{margin-top:12px}
+.gmt-field{margin:0 0 12px}
+.gmt-label{display:block;margin:0 0 6px;font-size:12px;color:var(--a-muted);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+
+.gmt-input{
+  width:100%;
+  height:46px;
+  padding:0 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  color:var(--a-tx);
+  outline:none;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+}
+.gmt-input:focus{
+  border-color:rgba(0,211,255,.48);
+  box-shadow:0 0 0 4px rgba(0,211,255,.16);
+  transform: translateY(-1px);
+}
+
+.gmt-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:12px 0 0}
+.gmt-check{display:flex;align-items:center;gap:10px;color:var(--a-muted);font-weight:700;font-size:13px}
+.gmt-check input{accent-color:var(--a-ac2)}
+
+.gmt-cta{
+  width:100%;
+  height:46px;
+  border-radius:14px;
+  border:0;
+  cursor:pointer;
+  background:linear-gradient(135deg, rgba(46,167,255,.96), rgba(0,211,255,.86));
+  color:var(--a-tx);
+  font-weight:900;
+  letter-spacing:.02em;
+  box-shadow:0 16px 48px rgba(46,167,255,.18);
+  transition: transform .15s ease, filter .15s ease;
+}
+.gmt-cta:hover{transform:translateY(-1px);filter:brightness(1.05)}
+
+.gmt-alert{
+  margin:12px 0 14px;
+  padding:12px 14px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  color:var(--a-tx);
+  line-height:1.45;
+  font-size:14px;
+}
+.gmt-alert.err{border-color:rgba(255,90,90,.30);background:rgba(255,90,90,.14)}
+.gmt-alert.ok{border-color:rgba(52,211,153,.28);background:rgba(52,211,153,.12)}
+
+.gmt-help{margin:12px 0 0;color:var(--a-muted);font-size:13px;line-height:1.6}
+.gmt-help a{color:var(--a-tx);text-decoration:underline;text-decoration-color:rgba(34,211,238,.35)}
+
+/* password toggle */
+.gmt-passwrap{position:relative}
+.gmt-eye{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.05);
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  color:rgba(238,241,255,.85);
+  user-select:none;
+}
+
+@media (max-width: 860px){
+  .gmt-auth__card{grid-template-columns:1fr}
+  .gmt-auth__right{border-left:0;border-top:1px solid rgba(255,255,255,.08)}
+  .gmt-auth__title{font-size:30px}
+}

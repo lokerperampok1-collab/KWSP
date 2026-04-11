@@ -1,0 +1,440 @@
+/* Custom UI polish + Blue theme (matches index.php accent) */
+:root {
+  --gmt-blue: #2ea7ff;
+  --gmt-navy: #03101a;
+  --gmt-navy-2: #0b1220;
+  --gmt-text: #e6e8ee;
+  --gmt-muted: #b9bcc8;
+}
+
+/* Force skin-blue palette closer to index.php */
+.skin-blue .main-header .navbar {
+  background-color: var(--gmt-navy) !important;
+}
+.skin-blue .main-header .logo {
+  background-color: var(--gmt-navy) !important;
+  color: var(--gmt-text) !important;
+}
+.skin-blue .main-header .logo:hover {
+  background-color: var(--gmt-navy) !important;
+}
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+  background-color: rgba(46, 167, 255, 0.12) !important;
+}
+
+.skin-blue .main-sidebar {
+  background-color: var(--gmt-navy-2) !important;
+}
+.skin-blue .sidebar a {
+  color: var(--gmt-text) !important;
+}
+.skin-blue .sidebar-menu > li.active > a,
+.skin-blue .sidebar-menu > li:hover > a {
+  border-left-color: var(--gmt-blue) !important;
+  background: rgba(46, 167, 255, 0.1) !important;
+}
+.skin-blue .sidebar-menu > li > a {
+  border-left: 3px solid transparent !important;
+}
+.skin-blue .sidebar-menu .treeview-menu > li > a {
+  color: var(--gmt-muted) !important;
+}
+.skin-blue .sidebar-menu .treeview-menu > li.active > a,
+.skin-blue .sidebar-menu .treeview-menu > li > a:hover {
+  color: var(--gmt-text) !important;
+}
+
+/* Content polish */
+.content-wrapper {
+  background: #0b1220 !important;
+}
+.content-header > h1,
+.content-header > h1 small {
+  color: var(--gmt-text) !important;
+}
+.box,
+.small-box,
+.info-box {
+  border-radius: 14px !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--gmt-text) !important;
+}
+.box .box-header,
+.box .box-footer {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.box-title {
+  color: var(--gmt-text) !important;
+}
+.table {
+  color: var(--gmt-text) !important;
+}
+.table > thead > tr > th {
+  border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+}
+.table > tbody > tr > td {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+a {
+  color: var(--gmt-blue);
+}
+a:hover {
+  color: #79c7ff;
+}
+
+.btn-primary,
+.btn-info {
+  background: var(--gmt-blue) !important;
+  border-color: var(--gmt-blue) !important;
+}
+.btn-primary:hover,
+.btn-info:hover {
+  filter: brightness(0.93);
+}
+
+/* Mobile improvements */
+@media (max-width: 767px) {
+  .main-header .logo {
+    font-size: 14px !important;
+  }
+  .content {
+    padding: 12px !important;
+  }
+  .table-responsive {
+    border: 0 !important;
+  }
+  .box,
+  .small-box,
+  .info-box {
+    border-radius: 12px !important;
+  }
+}
+/* ===== Mobile Topbar: keep 1 row, no wrapping ===== */
+@media (max-width: 520px) {
+  /* matikan kemungkinan overflow horizontal dari layout */
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Navbar jadi flex 1 baris */
+  .main-header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap !important;
+    min-height: 56px; /* stabil */
+  }
+
+  /* bagian kanan (menu saldo, notif, user) */
+  .main-header .navbar-custom-menu {
+    display: flex !important;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    float: none !important;
+  }
+
+  .main-header .navbar-custom-menu > .navbar-nav {
+    display: flex !important;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  /* rapikan spacing item navbar */
+  .main-header .navbar-custom-menu .navbar-nav > li {
+    float: none !important;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .main-header .navbar-custom-menu .navbar-nav > li > a {
+    padding: 10px 8px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  /* kecilkan teks supaya muat */
+  .main-header .navbar-custom-menu,
+  .main-header .navbar-custom-menu * {
+    font-size: 13px !important;
+  }
+
+  /* kalau masih sempit: sembunyikan label "Real" tapi angka saldo tetap tampil */
+  .main-header .navbar-custom-menu .gmt-acct-label {
+    display: none !important;
+  }
+}
+.tv-ticker-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tv-ticker-wrap .tradingview-widget-container {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+/* TradingView wide fit */
+#tv_invest_chart {
+  width: 100% !important;
+}
+
+/* Mobile: chart lebih pendek biar nyaman */
+@media (max-width: 520px) {
+  #tv_invest_chart {
+    height: 320px !important;
+  }
+}
+/* ==== USER DROPDOWN (lebih modern + animasi) ==== */
+.navbar-nav > .user-menu > .dropdown-menu {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 14, 24, 0.96);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+}
+
+/* header area */
+.navbar-nav > .user-menu > .dropdown-menu > .user-header {
+  background: rgba(255, 255, 255, 0.04) !important;
+  padding: 18px 16px 14px;
+}
+
+/* avatar bulat + glow */
+.user-menu .user-image,
+.user-menu .user-header img.img-circle {
+  border-radius: 50% !important;
+  border: 2px solid rgba(45, 140, 255, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* nama lebih jelas */
+.user-menu .user-header p {
+  color: rgba(255, 255, 255, 0.92);
+}
+.user-menu .user-header small {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* tombol jadi rapih */
+.gmt-user-footer {
+  display: flex;
+  gap: 10px;
+  padding: 12px 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.gmt-user-btn {
+  flex: 1;
+  border-radius: 14px !important;
+  padding: 10px 12px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* HP: tombol jadi 1 kolom */
+@media (max-width: 520px) {
+  .gmt-user-footer {
+    flex-direction: column;
+  }
+}
+
+/* Animasi dropdown user (aman utk Bootstrap 3/4/5) */
+.navbar-nav > .user-menu > .dropdown-menu {
+  z-index: 9999;
+  transform-origin: top right;
+}
+
+/* Bootstrap 3: parent .open
+   Bootstrap 4/5: menu .show / parent .show */
+.navbar-nav > .user-menu.open > .dropdown-menu,
+.navbar-nav > .user-menu.show > .dropdown-menu,
+.navbar-nav > .user-menu > .dropdown-menu.show {
+  animation: gmtDrop 0.18s ease both;
+}
+
+@keyframes gmtDrop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* turunin dropdown biar ada jarak dari navbar */
+.navbar-nav > .user-menu > .dropdown-menu {
+  margin-top: 14px !important;
+  padding-bottom: 12px !important;
+}
+
+/* kecilin avatar biar nama kebaca dan footer nggak mepet */
+.navbar-nav > .user-menu > .dropdown-menu > .user-header {
+  padding: 18px 16px 12px !important;
+}
+.user-menu .user-header img.img-circle {
+  width: 72px !important;
+  height: 72px !important;
+  margin-bottom: 10px !important;
+}
+
+/* nama user biar jelas */
+.user-menu .user-header p {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  margin: 6px 0 0 !important;
+  color: rgba(255, 255, 255, 0.9) !important; /* kalau background dropdown gelap */
+}
+
+/* footer: tombol lebih kecil & rapi */
+.gmt-user-footer {
+  padding: 10px 12px 12px !important;
+  gap: 8px !important;
+}
+.gmt-user-btn {
+  min-height: 38px !important;
+  padding: 7px 10px !important;
+  font-size: 12px !important;
+  border-radius: 12px !important;
+}
+select, input, button{
+  -webkit-appearance: none;
+  appearance: none;
+}
+select:focus, input:focus, button:focus{
+  outline: none;
+}
+/* ==== Modern user dropdown menu list ==== */
+.gmt-user-footer{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px 14px !important;
+  background: transparent !important;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.gmt-user-item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  text-decoration: none !important;
+  color: rgba(255,255,255,.92) !important;
+  background: rgba(255,255,255,.04);
+  transition: .15s ease;
+}
+
+.gmt-user-item i{
+  width: 18px;
+  text-align: center;
+  opacity: .9;
+}
+
+.gmt-user-item:hover{
+  background: rgba(45,140,255,.16);
+  transform: translateY(-1px);
+}
+
+.gmt-user-item.danger:hover{
+  background: rgba(255,70,70,.14);
+}
+
+/* kalau dropdown kamu background-nya putih, pakai ini (pilih salah satu) */
+/*
+.gmt-user-item{ color: rgba(0,0,0,.78) !important; background: rgba(0,0,0,.04); }
+.gmt-user-item:hover{ background: rgba(45,140,255,.12); }
+.gmt-user-footer{ border-top: 1px solid rgba(0,0,0,.08); }
+*/
+/* ===== Mobile fix untuk user dropdown ===== */
+@media (max-width: 520px){
+
+  /* dropdown jangan full putih + jangan jadi kotak raksasa */
+  .navbar-nav > .user-menu > .dropdown-menu{
+    width: 280px !important;
+    max-width: calc(100vw - 24px) !important;
+    right: 12px !important;
+    left: auto !important;
+    margin-top: 12px !important;
+
+    background: rgba(10,14,24,.96) !important;
+    border: 1px solid rgba(255,255,255,.10) !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  /* header area: paksa gelap dan teks terlihat */
+  .navbar-nav > .user-menu > .dropdown-menu > .user-header{
+    background: rgba(255,255,255,.04) !important;
+    padding: 16px 14px 12px !important;
+  }
+
+  .user-menu .user-header p{
+    color: rgba(255,255,255,.92) !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    margin: 8px 0 0 !important;
+  }
+
+  .user-menu .user-header small{
+    color: rgba(255,255,255,.65) !important;
+    display: block !important;
+    margin-top: 2px !important;
+  }
+
+  /* avatar biar gak kebesaran */
+  .user-menu .user-header img.img-circle{
+    width: 64px !important;
+    height: 64px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* menu list tetap rapi */
+  .gmt-user-footer{
+    padding: 10px 12px 12px !important;
+    border-top: 1px solid rgba(255,255,255,.08) !important;
+    background: transparent !important;
+  }
+
+  .gmt-user-item{
+    background: rgba(255,255,255,.04) !important;
+    color: rgba(255,255,255,.92) !important;
+    border-radius: 14px !important;
+    padding: 10px 12px !important;
+  }
+}
+/* Avatar kiri, nama kanan (dropdown user) */
+.user-menu .user-header{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  text-align: left !important;
+}
+
+.user-menu .user-header img.img-circle{
+  margin: 0 !important;
+  width: 58px !important;
+  height: 58px !important;
+  flex: 0 0 58px;
+}
+
+.user-menu .user-header p{
+  margin: 0 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-menu .user-header small{
+  display: block !important;
+  margin-top: 3px !important;
+  opacity: .8;
+}

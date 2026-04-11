@@ -1,0 +1,47 @@
+/* Wallet Blue Theme Override
+   Purpose: force wallet pages (wallet.php, wallet_deposit.php, wallet_overview) to match "skin-blue" look
+   Load this AFTER master_style.css and skins/_all-skins.css
+*/
+
+.main-header,
+.main-header .navbar,
+.navbar,
+.navbar-static-top{
+  background-color:#0b1a2a !important; /* deep navy */
+  background-image:none !important;
+}
+
+.skin-blue .main-header .navbar{
+  background-color:#0b1a2a !important;
+}
+
+.skin-blue .main-header .logo{
+  background-color:#0b1a2a !important;
+  color:#fff !important;
+}
+
+.skin-blue .main-header .logo:hover{
+  background-color:#0a1624 !important;
+}
+
+.skin-blue .sidebar-menu > li.active > a,
+.skin-blue .sidebar-menu > li:hover > a{
+  background:#0f2742 !important;
+  border-left-color:#3c8dbc !important;
+}
+
+.skin-blue .content-wrapper,
+.skin-blue .right-side{
+  background:#0b1320 !important;
+}
+
+.box,
+.box-body,
+.box-header{
+  background:rgba(255,255,255,0.06) !important;
+}
+
+.badge-balance{
+  background:rgba(0,0,0,0.35) !important;
+  border:1px solid rgba(255,255,255,0.15) !important;
+}

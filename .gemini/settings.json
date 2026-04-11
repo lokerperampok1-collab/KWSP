@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "mysql-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-mysql",
+        "mysql://root:@127.0.0.1:3306/kwsp_laravel"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1127 @@
+/* Custom UI polish + Blue theme (matches index.php accent) */
+:root {
+  --gmt-blue: #2ea7ff;
+  --gmt-navy: #03101a;
+  --gmt-navy-2: #0b1220;
+  --gmt-text: #e6e8ee;
+  --gmt-muted: #b9bcc8;
+}
+
+/* Force skin-blue palette closer to index.php */
+.skin-blue .main-header .navbar {
+  background-color: var(--gmt-navy) !important;
+}
+.skin-blue .main-header .logo {
+  background-color: var(--gmt-navy) !important;
+  color: var(--gmt-text) !important;
+}
+.skin-blue .main-header .logo:hover {
+  background-color: var(--gmt-navy) !important;
+}
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+  background-color: rgba(46, 167, 255, 0.12) !important;
+}
+
+.skin-blue .main-sidebar {
+  background-color: var(--gmt-navy-2) !important;
+}
+.skin-blue .sidebar a {
+  color: var(--gmt-text) !important;
+}
+.skin-blue .sidebar-menu > li.active > a,
+.skin-blue .sidebar-menu > li:hover > a {
+  border-left-color: var(--gmt-blue) !important;
+  background: rgba(46, 167, 255, 0.1) !important;
+}
+.skin-blue .sidebar-menu > li > a {
+  border-left: 3px solid transparent !important;
+}
+.skin-blue .sidebar-menu .treeview-menu > li > a {
+  color: var(--gmt-muted) !important;
+}
+.skin-blue .sidebar-menu .treeview-menu > li.active > a,
+.skin-blue .sidebar-menu .treeview-menu > li > a:hover {
+  color: var(--gmt-text) !important;
+}
+
+/* Content polish */
+.content-wrapper {
+  background: #0b1220 !important;
+}
+.content-header > h1,
+.content-header > h1 small {
+  color: var(--gmt-text) !important;
+}
+.box,
+.small-box,
+.info-box {
+  border-radius: 14px !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--gmt-text) !important;
+}
+.box .box-header,
+.box .box-footer {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.box-title {
+  color: var(--gmt-text) !important;
+}
+.table {
+  color: var(--gmt-text) !important;
+}
+.table > thead > tr > th {
+  border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+}
+.table > tbody > tr > td {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+a {
+  color: var(--gmt-blue);
+}
+a:hover {
+  color: #79c7ff;
+}
+
+.btn-primary,
+.btn-info {
+  background: var(--gmt-blue) !important;
+  border-color: var(--gmt-blue) !important;
+}
+.btn-primary:hover,
+.btn-info:hover {
+  filter: brightness(0.93);
+}
+
+/* Mobile improvements */
+@media (max-width: 767px) {
+  .main-header .logo {
+    font-size: 14px !important;
+  }
+  .content {
+    padding: 12px !important;
+  }
+  .table-responsive {
+    border: 0 !important;
+  }
+  .box,
+  .small-box,
+  .info-box {
+    border-radius: 12px !important;
+  }
+}
+/* ===== Mobile Topbar: keep 1 row, no wrapping ===== */
+@media (max-width: 520px) {
+  /* matikan kemungkinan overflow horizontal dari layout */
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Navbar jadi flex 1 baris */
+  .main-header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap !important;
+    min-height: 56px; /* stabil */
+  }
+
+  /* bagian kanan (menu saldo, notif, user) */
+  .main-header .navbar-custom-menu {
+    display: flex !important;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    float: none !important;
+  }
+
+  .main-header .navbar-custom-menu > .navbar-nav {
+    display: flex !important;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  /* rapikan spacing item navbar */
+  .main-header .navbar-custom-menu .navbar-nav > li {
+    float: none !important;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .main-header .navbar-custom-menu .navbar-nav > li > a {
+    padding: 10px 8px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  /* kecilkan teks supaya muat */
+  .main-header .navbar-custom-menu,
+  .main-header .navbar-custom-menu * {
+    font-size: 13px !important;
+  }
+
+  /* kalau masih sempit: sembunyikan label "Real" tapi angka saldo tetap tampil */
+  .main-header .navbar-custom-menu .gmt-acct-label {
+    display: none !important;
+  }
+}
+.tv-ticker-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tv-ticker-wrap .tradingview-widget-container {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+/* TradingView wide fit */
+#tv_invest_chart {
+  width: 100% !important;
+}
+
+/* Mobile: chart lebih pendek biar nyaman */
+@media (max-width: 520px) {
+  #tv_invest_chart {
+    height: 320px !important;
+  }
+}
+/* ==== USER DROPDOWN (lebih modern + animasi) ==== */
+.navbar-nav > .user-menu > .dropdown-menu {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 14, 24, 0.96);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+}
+
+/* header area */
+.navbar-nav > .user-menu > .dropdown-menu > .user-header {
+  background: rgba(255, 255, 255, 0.04) !important;
+  padding: 18px 16px 14px;
+}
+
+/* avatar bulat + glow */
+.user-menu .user-image,
+.user-menu .user-header img.img-circle {
+  border-radius: 50% !important;
+  border: 2px solid rgba(45, 140, 255, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* nama lebih jelas */
+.user-menu .user-header p {
+  color: rgba(255, 255, 255, 0.92);
+}
+.user-menu .user-header small {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* tombol jadi rapih */
+.gmt-user-footer {
+  display: flex;
+  gap: 10px;
+  padding: 12px 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.gmt-user-btn {
+  flex: 1;
+  border-radius: 14px !important;
+  padding: 10px 12px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* HP: tombol jadi 1 kolom */
+@media (max-width: 520px) {
+  .gmt-user-footer {
+    flex-direction: column;
+  }
+}
+
+/* Animasi dropdown user (aman utk Bootstrap 3/4/5) */
+.navbar-nav > .user-menu > .dropdown-menu {
+  z-index: 9999;
+  transform-origin: top right;
+}
+
+/* Bootstrap 3: parent .open
+   Bootstrap 4/5: menu .show / parent .show */
+.navbar-nav > .user-menu.open > .dropdown-menu,
+.navbar-nav > .user-menu.show > .dropdown-menu,
+.navbar-nav > .user-menu > .dropdown-menu.show {
+  animation: gmtDrop 0.18s ease both;
+}
+
+@keyframes gmtDrop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* turunin dropdown biar ada jarak dari navbar */
+.navbar-nav > .user-menu > .dropdown-menu {
+  margin-top: 14px !important;
+  padding-bottom: 12px !important;
+}
+
+/* kecilin avatar biar nama kebaca dan footer nggak mepet */
+.navbar-nav > .user-menu > .dropdown-menu > .user-header {
+  padding: 18px 16px 12px !important;
+}
+.user-menu .user-header img.img-circle {
+  width: 72px !important;
+  height: 72px !important;
+  margin-bottom: 10px !important;
+}
+
+/* nama user biar jelas */
+.user-menu .user-header p {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  margin: 6px 0 0 !important;
+  color: rgba(255, 255, 255, 0.9) !important; /* kalau background dropdown gelap */
+}
+
+/* footer: tombol lebih kecil & rapi */
+.gmt-user-footer {
+  padding: 10px 12px 12px !important;
+  gap: 8px !important;
+}
+.gmt-user-btn {
+  min-height: 38px !important;
+  padding: 7px 10px !important;
+  font-size: 12px !important;
+  border-radius: 12px !important;
+}
+select, input, button{
+  -webkit-appearance: none;
+  appearance: none;
+}
+select:focus, input:focus, button:focus{
+  outline: none;
+}
+/* ==== Modern user dropdown menu list ==== */
+.gmt-user-footer{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px 14px !important;
+  background: transparent !important;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.gmt-user-item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  text-decoration: none !important;
+  color: rgba(255,255,255,.92) !important;
+  background: rgba(255,255,255,.04);
+  transition: .15s ease;
+}
+
+.gmt-user-item i{
+  width: 18px;
+  text-align: center;
+  opacity: .9;
+}
+
+.gmt-user-item:hover{
+  background: rgba(45,140,255,.16);
+  transform: translateY(-1px);
+}
+
+.gmt-user-item.danger:hover{
+  background: rgba(255,70,70,.14);
+}
+
+/* kalau dropdown kamu background-nya putih, pakai ini (pilih salah satu) */
+/*
+.gmt-user-item{ color: rgba(0,0,0,.78) !important; background: rgba(0,0,0,.04); }
+.gmt-user-item:hover{ background: rgba(45,140,255,.12); }
+.gmt-user-footer{ border-top: 1px solid rgba(0,0,0,.08); }
+*/
+/* ===== Mobile fix untuk user dropdown ===== */
+@media (max-width: 520px){
+
+  /* dropdown jangan full putih + jangan jadi kotak raksasa */
+  .navbar-nav > .user-menu > .dropdown-menu{
+    width: 280px !important;
+    max-width: calc(100vw - 24px) !important;
+    right: 12px !important;
+    left: auto !important;
+    margin-top: 12px !important;
+
+    background: rgba(10,14,24,.96) !important;
+    border: 1px solid rgba(255,255,255,.10) !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  /* header area: paksa gelap dan teks terlihat */
+  .navbar-nav > .user-menu > .dropdown-menu > .user-header{
+    background: rgba(255,255,255,.04) !important;
+    padding: 16px 14px 12px !important;
+  }
+
+  .user-menu .user-header p{
+    color: rgba(255,255,255,.92) !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    margin: 8px 0 0 !important;
+  }
+
+  .user-menu .user-header small{
+    color: rgba(255,255,255,.65) !important;
+    display: block !important;
+    margin-top: 2px !important;
+  }
+
+  /* avatar biar gak kebesaran */
+  .user-menu .user-header img.img-circle{
+    width: 64px !important;
+    height: 64px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* menu list tetap rapi */
+  .gmt-user-footer{
+    padding: 10px 12px 12px !important;
+    border-top: 1px solid rgba(255,255,255,.08) !important;
+    background: transparent !important;
+  }
+
+  .gmt-user-item{
+    background: rgba(255,255,255,.04) !important;
+    color: rgba(255,255,255,.92) !important;
+    border-radius: 14px !important;
+    padding: 10px 12px !important;
+  }
+}
+/* Avatar kiri, nama kanan (dropdown user) */
+.user-menu .user-header{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  text-align: left !important;
+}
+
+.user-menu .user-header img.img-circle{
+  margin: 0 !important;
+  width: 58px !important;
+  height: 58px !important;
+  flex: 0 0 58px;
+}
+
+.user-menu .user-header p{
+  margin: 0 !important;
+  line-height: 1.2 !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;     /* penting untuk ellipsis di flex */
+  overflow: hidden;
+}
+
+/* nama (span) & username (small) biar rapi dan gak kelewatan */
+.user-menu .user-header p > span,
+.user-menu .user-header p > small{
+  display: block !important;
+  min-width: 0 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-menu .user-header small{
+  margin-top: 3px !important;
+  opacity: .8;
+}
+/* ===== Fix: avatar kiri, teks kanan, tidak kelewatan ===== */
+.user-menu .user-header{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  text-align: left !important;
+  overflow: hidden !important;
+}
+
+.user-menu .user-header img.img-circle{
+  flex: 0 0 58px !important;
+  width: 58px !important;
+  height: 58px !important;
+  margin: 0 !important;
+}
+
+.user-menu .user-header p{
+  flex: 1 1 auto !important;
+  min-width: 0 !important;       /* KUNCI ellipsis di flex */
+  margin: 0 !important;
+}
+
+/* nama + username */
+.user-menu .user-header #gmtUserName{
+  display: block !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-weight: 700;
+}
+
+.user-menu .user-header small{
+  display: block !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  opacity: .75;
+  margin-top: 2px !important;
+}
+
+/* optional: kecilin avatar di HP */
+@media (max-width: 520px){
+  .user-menu .user-header img.img-circle{
+    flex-basis: 52px !important;
+    width: 52px !important;
+    height: 52px !important;
+  }
+}
+@media (max-width: 520px){
+  .navbar-nav > .user-menu > .dropdown-menu{
+    width: 280px !important;
+    max-width: calc(100vw - 24px) !important;
+    right: 12px !important;
+    left: auto !important;
+  }
+}
+/* FORCE: avatar kiri + teks kanan (anti-kelewatan) */
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  text-align: left !important;
+  padding: 16px 14px 12px !important;
+  overflow: hidden !important;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > img.img-circle{
+  flex: 0 0 58px !important;
+  width: 58px !important;
+  height: 58px !important;
+  margin: 0 !important;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p{
+  width: calc(100% - 70px) !important; /* 58 avatar + gap */
+  max-width: calc(100% - 70px) !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > #gmtUserName,
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > small{
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: normal !important;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > #gmtUserName{
+  font-weight: 800 !important;
+}
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > small{
+  opacity: .75 !important;
+  margin-top: 2px !important;
+}
+.navbar-nav > .user-menu > .dropdown-menu{
+  width: 320px !important;
+}
+/* FIX utama: AdminLTE kasih padding 100px ke <p> di user-header */
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p{
+  padding: 0 !important;          /* ini yang ngilangin 100px */
+  margin: 0 !important;
+  width: calc(100% - 70px) !important;  /* ruang untuk avatar+gap */
+  min-width: 0 !important;
+  text-align: left !important;
+}
+
+/* pastikan teks rapi & ellipsis */
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > #gmtUserName,
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > small{
+  display: block !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+/* HP: sembunyikan nama di topbar biar gak kepotong */
+@media (max-width: 520px){
+  #topUserName{
+    display: none !important;
+  }
+}
+/* ===== Premium Mobile Navbar ===== */
+
+/* navbar glass */
+@media (max-width: 520px){
+  .navbar.navbar-static-top{
+    background: rgba(3, 12, 24, 0.72) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+
+  /* brand text/logo lebih rapi */
+  .main-header .logo{
+    background: transparent !important;
+    border-right: 0 !important;
+  }
+  .main-header .logo .logo-lg,
+  .main-header .logo .logo-mini{
+    font-weight: 700;
+    letter-spacing: .4px;
+  }
+
+  /* nav items spacing */
+  .navbar-custom-menu>.navbar-nav>li>a{
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+
+  /* Balance pill */
+  .navbar-nav > li.dropdown.balance-pill > a,
+  .navbar-nav > li.balance-pill > a{
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(45,140,255,0.25) !important;
+    border-radius: 999px !important;
+    padding: 8px 12px !important;
+    margin-top: 8px;
+    margin-right: 8px;
+    box-shadow: 0 0 0 3px rgba(45,140,255,0.12);
+  }
+
+  /* icon buttons (bell & user) */
+  .navbar-nav > li.notifications-menu > a,
+  .navbar-nav > li.user-menu > a{
+    width: 42px;
+    height: 42px;
+    padding: 0 !important;
+    margin-top: 8px;
+    margin-right: 8px;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.10) !important;
+  }
+
+  /* avatar kecil di topbar */
+  .navbar-nav > li.user-menu img.user-image{
+    width: 28px !important;
+    height: 28px !important;
+    margin: 0 !important;
+    border-radius: 50% !important;
+    border: 2px solid rgba(45,140,255,0.35);
+  }
+
+  /* bell badge lebih “clean” */
+  .navbar-nav > li.notifications-menu .label{
+    border-radius: 999px !important;
+    padding: 2px 6px !important;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  }
+
+  /* tap feedback */
+  .navbar-nav > li > a:active{
+    transform: translateY(1px);
+  }
+}
+@media (max-width: 520px){
+  .navbar.navbar-static-top:before{
+    content:"";
+    position:absolute;
+    left:0; right:0; top:0;
+    height:1px;
+    background: linear-gradient(90deg, transparent, rgba(45,140,255,.65), transparent);
+  }
+}
+/* hide red notif dot on bell */
+span#gmtNotifDot{
+  display: none !important;
+}
+/* Sticky / fixed navbar */
+.main-header{
+  position: fixed !important;
+  top: 0; left: 0; right: 0;
+  z-index: 1030; /* di atas konten */
+}
+
+/* Biar konten tidak ketutup navbar (tinggi header kira-kira 50px) */
+.content-wrapper,
+.right-side,
+.main-footer{
+  padding-top: 50px;
+}
+:root{
+  --gmt-blue: #2D8CFF;
+  --gmt-blue2: #00D0FF;
+  --gmt-white: #FFFFFF;
+}
+
+/* text */
+.text-warning,
+.text-yellow{
+  color: var(--gmt-blue) !important;
+}
+
+/* badges/labels */
+.label-warning,
+.badge-warning{
+  background: var(--gmt-blue) !important;
+  color: #fff !important;
+}
+
+/* buttons */
+.btn-warning{
+  background: var(--gmt-blue) !important;
+  border-color: rgba(45,140,255,.45) !important;
+  color: #fff !important;
+}
+.btn-warning:hover,
+.btn-warning:focus{
+  background: #2378e6 !important;
+  border-color: rgba(45,140,255,.65) !important;
+}
+
+/* links that look orange */
+a.text-warning{
+  color: var(--gmt-white) !important;
+}
+a.text-warning:hover{
+  color: #00D0FF !important;
+}
+/* Angka besar di card (bukan Details) jadi putih */
+.box .flexbox.align-items-center.mt-5 > div:first-child .text-yellow,
+.box .flexbox.align-items-center.mt-5 > div:first-child span{
+  color: var(--gmt-white) !important;
+}
+
+/* Pastikan Details tetap biru */
+.box .flexbox.align-items-center.mt-5 > div.text-right .text-warning,
+.box .flexbox.align-items-center.mt-5 > div.text-right span{
+  color: var(--gmt-blue) !important;
+}
+/* ===== Welcome box premium ===== */
+.gmt-welcome{
+  position: relative;
+  border-radius: 18px;
+}
+
+.gmt-welcome:before{
+  content:"";
+  position:absolute;
+  left: 0; right: 0; top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(45,140,255,.55), transparent);
+  opacity: .9;
+}
+
+.gmt-welcome-top{
+  display:flex;
+  gap: 14px;
+  align-items:flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.gmt-hello{
+  font-size: 14px;
+  color: rgba(255,255,255,.65);
+  letter-spacing: .2px;
+}
+
+.gmt-name{
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin-top: 2px;
+}
+
+.gmt-sub{
+  color: rgba(255,255,255,.65);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.gmt-welcome-badges{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.gmt-badge{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.85);
+  font-size: 12px;
+}
+
+.gmt-badge i{ opacity: .9; }
+
+/* invite link row */
+.gmt-invite{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.gmt-invite-row{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+}
+
+.gmt-invite-input{
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 46px;
+  border-radius: 14px;
+  padding: 0 14px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(45,140,255,.25);
+  color: rgba(255,255,255,.9);
+  outline: none;
+}
+
+.gmt-invite-input:focus{
+  box-shadow: 0 0 0 4px rgba(45,140,255,.18);
+  border-color: rgba(45,140,255,.55);
+}
+
+.gmt-invite-btn{
+  height: 46px;
+  border-radius: 14px;
+  padding: 0 14px;
+  border: 1px solid rgba(45,140,255,.35);
+  background: linear-gradient(135deg, rgba(45,140,255,.95), rgba(0,208,255,.95));
+  color: #fff;
+  font-weight: 700;
+  display:flex;
+  align-items:center;
+  gap: 8px;
+}
+
+.gmt-invite-btn:active{ transform: translateY(1px); }
+
+.gmt-invite-hint{
+  margin-top: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+}
+
+/* mobile */
+@media (max-width: 520px){
+  .gmt-name{ font-size: 22px; }
+  .gmt-invite-row{ flex-direction: column; align-items: stretch; }
+  .gmt-invite-btn{ width: 100%; justify-content: center; }
+}
+/* ===== Welcome box premium ===== */
+/* ===== Premium background (dark gradient + glow) ===== */
+body.skin-blue{
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(45,140,255,.18), transparent 55%),
+    radial-gradient(700px 420px at 90% 20%, rgba(0,208,255,.10), transparent 55%),
+    linear-gradient(180deg, #060b15 0%, #04070f 100%) !important;
+}
+
+/* area konten ikut transparan sedikit biar glow keliatan */
+.content-wrapper{
+  background: transparent !important;
+}
+
+/* optional: kasih “panel” halus di belakang konten */
+.content-wrapper:before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 700px at 50% 30%, rgba(255,255,255,.04), transparent 60%);
+  opacity: .9;
+}
+/* ===== Premium background (dark gradient + glow) ===== */
+.content-wrapper:after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .06;
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(255,255,255,.6) 1px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+:root{
+  --gmt-bg-0:#04070f;
+  --gmt-bg-1:#060b15;
+  --gmt-panel: rgba(255,255,255,.045);
+  --gmt-border: rgba(255,255,255,.08);
+  --gmt-glow: rgba(45,140,255,.22);
+  --gmt-glow2: rgba(0,208,255,.12);
+}
+
+/* ===== Premium app background ===== */
+body.skin-blue{
+  background:
+    radial-gradient(900px 520px at 18% 0%, var(--gmt-glow), transparent 55%),
+    radial-gradient(720px 420px at 90% 18%, var(--gmt-glow2), transparent 55%),
+    radial-gradient(1100px 700px at 50% 110%, rgba(255,255,255,.04), transparent 55%),
+    linear-gradient(180deg, var(--gmt-bg-1) 0%, var(--gmt-bg-0) 100%) !important;
+}
+
+/* keep background visible behind content */
+.content-wrapper{ background: transparent !important; }
+
+/* subtle dotted/noise overlay (mewah tapi halus) */
+body.skin-blue:before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .12; /* turunin ke .08 kalau kebanyakan */
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(255,255,255,.65) 1px, transparent 1.6px);
+  background-size: 26px 26px;
+}
+
+/* ===== Glass cards (box) ===== */
+.box{
+  background: var(--gmt-panel) !important;
+  border: 1px solid var(--gmt-border) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 55px rgba(0,0,0,.35) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* header box lebih premium */
+.box-header{
+  border-bottom: 1px solid rgba(255,255,255,.08) !important;
+}
+
+/* biar card dashboard yang hex jadi tetap keliatan tapi lebih glossy */
+.box-body.pull-up.bg-hexagons-white{
+  background-color: rgba(255,255,255,.03) !important;
+}
+
+/* ===== Optional: sedikit glow di hover ===== */
+.box:hover{
+  border-color: rgba(45,140,255,.18) !important;
+  box-shadow: 0 22px 70px rgba(0,0,0,.42) !important;
+}
+/* ===== KPI cards premium (tanpa ubah flow) ===== */
+.gmt-kpi{
+  position: relative;
+  border-radius: 18px;
+  padding: 18px 18px 16px !important;
+  background: rgba(255,255,255,.035) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: 0 18px 55px rgba(0,0,0,.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+/* highlight line di atas */
+.gmt-kpi:before{
+  content:"";
+  position:absolute;
+  left: 0; right: 0; top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(45,140,255,.55), transparent);
+  opacity: .9;
+}
+
+/* glow tipis kanan atas */
+.gmt-kpi:after{
+  content:"";
+  position:absolute;
+  right:-60px; top:-60px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(45,140,255,.18), transparent 60%);
+  pointer-events:none;
+}
+
+/* rapihin header (icon + title) */
+.gmt-kpi .media.align-items-center{
+  gap: 12px;
+}
+.gmt-kpi .media .text-center{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(45,140,255,.12);
+  border: 1px solid rgba(45,140,255,.22);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+/* icon tanpa inline style (override) */
+.gmt-kpi .media .text-center i{
+  font-size: 26px !important;
+  margin: 0 !important;
+  color: #2D8CFF !important;
+}
+
+/* title/subtitle */
+.gmt-kpi h3{
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+}
+.gmt-kpi h3 + span{
+  display:block;
+  margin-top: 2px;
+  color: rgba(255,255,255,.65);
+}
+
+/* area value + details */
+.gmt-kpi .flexbox.align-items-center.mt-5{
+  margin-top: 16px !important;
+}
+
+.gmt-kpi .flexbox > div:first-child span{
+  color: rgba(255,255,255,.92) !important;  /* angka besar */
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+.gmt-kpi .flexbox .text-right span{
+  color: #2D8CFF !important; /* Details tetap biru */
+  font-weight: 700;
+}
+
+/* hover premium */
+.gmt-kpi:hover{
+  border-color: rgba(45,140,255,.22) !important;
+  box-shadow: 0 22px 70px rgba(0,0,0,.45);
+  transform: translateY(-2px);
+  transition: .18s ease;
+}
+
+/* modifier warna glow beda tiap card (optional) */
+.gmt-kpi.kpi-ref:after{ background: radial-gradient(circle, rgba(0,208,255,.16), transparent 60%); }
+.gmt-kpi.kpi-bonus:after{ background: radial-gradient(circle, rgba(45,140,255,.20), transparent 60%); }
+.gmt-kpi.kpi-profit:after{ background: radial-gradient(circle, rgba(72,255,178,.10), transparent 60%); }
+.gmt-kpi.kpi-wallet:after{ background: radial-gradient(circle, rgba(255,206,86,.10), transparent 60%); }
+
+/* mobile spacing */
+@media (max-width: 520px){
+  .gmt-kpi{ padding: 16px 14px 14px !important; }
+  .gmt-kpi .flexbox > div:first-child span{ font-size: 20px; }
+}
+/* Halusin pattern hex bawaan (biar gak rame) */
+.gmt-kpi.bg-hexagons-white{
+  background-image: none !important; /* matiin pattern template */
+}
+
+/* Tambahin texture halus + depth */
+.gmt-kpi{
+  background:
+    radial-gradient(500px 220px at 30% 0%, rgba(45,140,255,.10), transparent 60%),
+    radial-gradient(420px 220px at 100% 30%, rgba(0,208,255,.08), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.03) 45%, rgba(255,255,255,.025) 100%) !important;
+}
+
+/* highlight line lebih “mahal” */
+.gmt-kpi:before{
+  height: 2px !important;
+  opacity: .75 !important;
+  background: linear-gradient(90deg, transparent, rgba(45,140,255,.85), rgba(0,208,255,.55), transparent) !important;
+}
+
+/* icon chip lebih pop */
+.gmt-kpi .media .text-center{
+  background: rgba(45,140,255,.14) !important;
+  border-color: rgba(45,140,255,.28) !important;
+}
+
+/* angka besar lebih tegas */
+.gmt-kpi .flexbox > div:first-child span{
+  text-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* hover lebih mewah (lebih halus) */
+.gmt-kpi{
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.gmt-kpi:hover{
+  transform: translateY(-3px);
+  border-color: rgba(45,140,255,.28) !important;
+}
+/* Hilangkan area kosong chart di bawah KPI cards */
+.box.pull-up .box-footer{
+  display: none !important;
+}
+/* ===== Sidebar scroll sendiri ===== */
+
+/* tinggi header kamu (sesuaikan kalau beda) */
+:root{ --gmt-header-h: 50px; }
+
+/* sidebar fixed + bisa scroll */
+.main-sidebar{
+  position: fixed !important;
+  top: var(--gmt-header-h) !important;
+  bottom: 0 !important;
+  height: calc(100vh - var(--gmt-header-h)) !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain; /* biar scroll gak "nembus" ke body */
+}
+
+/* kalau AdminLTE pakai inner .sidebar, ini yang paling penting */
+.main-sidebar .sidebar{
+  height: 100% !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* ===== Saat sidebar OPEN (mobile overlay), body jangan ikut scroll ===== */
+body.sidebar-open,
+body.sidebar-open .content-wrapper,
+body.sidebar-open .right-side{
+  overflow: hidden !important;
+}
+
+/* konten tetap rapih karena header fixed */
+.content-wrapper{
+  padding-top: var(--gmt-header-h) !important;
+}

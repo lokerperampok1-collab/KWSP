@@ -1,0 +1,250 @@
+/* ============================================================
+   KWSP Malaysia — Corporate Light Master Override
+   Premium UI with animations, glassmorphism, micro-interactions
+   ============================================================ */
+
+/* ── Base Body ── */
+body.corporate-light {
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+    font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Legacy AdminLTE Header & Sidebar ── */
+.skin-blue .main-header .navbar {
+    background-color: var(--bg-card) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+.skin-blue .main-header .logo {
+    background-color: var(--bg-card) !important;
+    color: var(--kwsp-blue-deep) !important;
+    border-right: 1px solid var(--border-color) !important;
+    font-weight: 800 !important;
+}
+.skin-blue .main-sidebar {
+    background-color: var(--bg-card) !important;
+    border-right: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+.skin-blue .sidebar a { color: var(--text-secondary) !important; }
+.skin-blue .sidebar-menu > li.active > a,
+.skin-blue .sidebar-menu > li:hover > a {
+    background-color: var(--kwsp-blue-pale) !important;
+    color: var(--kwsp-blue-action) !important;
+    border-left: 3px solid var(--kwsp-blue-action) !important;
+}
+.content-wrapper { background-color: var(--bg-main) !important; }
+
+/* ── Card System (Premium Light) ── */
+.box, .small-box, .info-box {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-card) !important;
+    color: var(--text-main) !important;
+    transition: box-shadow var(--duration-normal) var(--ease-smooth),
+                transform var(--duration-normal) var(--ease-smooth) !important;
+}
+.box:hover, .small-box:hover, .info-box:hover {
+    box-shadow: var(--shadow-lg) !important;
+}
+.box-header {
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 18px 24px !important;
+}
+.box-title {
+    color: var(--kwsp-blue-deep) !important;
+    font-weight: 700 !important;
+    font-size: 1.05rem !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* ── Buttons (Premium Gradient + Lift) ── */
+.btn-primary, .gmtd-cta {
+    background: linear-gradient(135deg, var(--kwsp-blue-deep), var(--kwsp-blue-action)) !important;
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    padding: 12px 28px !important;
+    box-shadow: var(--shadow-blue) !important;
+    transition: all var(--duration-normal) var(--ease-smooth) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    color: white !important;
+    position: relative;
+    overflow: hidden;
+}
+.btn-primary::after, .gmtd-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--ease-smooth);
+}
+.btn-primary:hover, .gmtd-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-blue-lg) !important;
+}
+.btn-primary:hover::after, .gmtd-cta:hover::after { opacity: 1; }
+.btn-primary:active, .gmtd-cta:active {
+    transform: translateY(0) scale(0.98) !important;
+}
+
+/* ── Table Light Mode ── */
+.table { color: var(--text-main) !important; }
+.table > thead > tr > th {
+    background-color: var(--bg-main) !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    color: var(--kwsp-blue-deep) !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    padding: 14px 16px !important;
+}
+.table > tbody > tr {
+    transition: background var(--duration-fast) var(--ease-smooth) !important;
+}
+.table > tbody > tr:hover {
+    background: var(--kwsp-blue-pale) !important;
+}
+
+/* ── Bottom Navigation (Floating Glass Card) ── */
+.gmtd-nav {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    height: auto !important;
+    margin: 0 !important;
+    border-radius: var(--radius-lg) !important;
+    border: 1px solid rgba(255,255,255,0.6) !important;
+    box-shadow: 0 -4px 30px rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.08) !important;
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    position: fixed !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: 16px !important;
+    width: min(720px, calc(100vw - 32px)) !important;
+    transform: translateX(-50%) !important;
+    z-index: 9999 !important;
+}
+.gmtd-nav__wrap {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 6px !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+}
+.gmtd-nav__wrap a, .gmtd-nav a {
+    color: var(--text-muted) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 8px 4px !important;
+    border-radius: var(--radius-md) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    transition: all var(--duration-normal) var(--ease-spring) !important;
+    text-decoration: none !important;
+}
+.gmtd-nav__wrap a:hover, .gmtd-nav a:hover {
+    background: var(--kwsp-blue-pale) !important;
+    color: var(--kwsp-blue-action) !important;
+}
+.gmtd-nav__wrap a.active, .gmtd-nav a.active {
+    color: var(--kwsp-blue-deep) !important;
+    font-weight: 700 !important;
+}
+.gmtd-nav__wrap a.active i, .gmtd-nav a.active i {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    display: grid !important;
+    place-items: center !important;
+    background: linear-gradient(135deg, var(--kwsp-blue-deep), var(--kwsp-blue-action)) !important;
+    color: white !important;
+    box-shadow: var(--shadow-blue) !important;
+    font-size: 16px !important;
+}
+.gmtd-nav__wrap a i, .gmtd-nav a i {
+    font-size: 18px !important;
+    transition: all var(--duration-normal) var(--ease-spring) !important;
+}
+
+@media (max-width: 768px) {
+    .gmtd-nav {
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 12px !important;
+        width: auto !important;
+        margin: 0 12px !important;
+        transform: none !important;
+        padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+    .gmtd-nav__wrap {
+        gap: 2px !important;
+        max-width: none !important;
+    }
+    .gmtd-nav__wrap a, .gmtd-nav a {
+        gap: 3px !important;
+        padding: 7px 2px !important;
+        font-size: 10px !important;
+    }
+    .gmtd-nav__wrap a i, .gmtd-nav a i {
+        font-size: 16px !important;
+    }
+    .gmtd-nav__wrap a.active i, .gmtd-nav a.active i {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* ── Hide persistent legacy preloader ── */
+.preloader, #preloader {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* ── Constrain logos ── */
+img.logo, .gmtd-brand img, .brand img {
+    max-height: 44px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+.main_header__ .hero-right img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* ── Flash / Success messages ── */
+.alert-success, .alert-info {
+    background: var(--kwsp-green-pale) !important;
+    color: #065f46 !important;
+    border: 1px solid #a7f3d0 !important;
+    border-radius: var(--radius-md) !important;
+    animation: kwspSlideDown var(--duration-slow) var(--ease-spring) !important;
+}
+
+/* ── Pagination ── */
+.pagination {
+    gap: 4px;
+}
+.pagination .page-link,
+.pagination a {
+    border-radius: var(--radius-sm) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-secondary) !important;
+    transition: all var(--duration-fast) var(--ease-smooth) !important;
+    font-weight: 500 !important;
+}
+.pagination .active .page-link,
+.pagination .active a {
+    background: var(--kwsp-blue-deep) !important;
+    border-color: var(--kwsp-blue-deep) !important;
+    color: white !important;
+}

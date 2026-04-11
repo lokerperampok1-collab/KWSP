@@ -1,0 +1,74 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "KWSP Malaysia KWSP Malaysia Percaya pada pelaburan anda" [ref=e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - img "KWSP Malaysia" [ref=e5]
+        - generic [ref=e6]:
+          - text: KWSP Malaysia
+          - generic [ref=e7]: Percaya pada pelaburan anda
+      - generic [ref=e8]:
+        - button "Admin KWSP " [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]: Admin KWSP
+          - generic [ref=e11]: 
+        - text:    
+    - generic [ref=e12]:
+      - heading " Pelan Pelaburan" [level=1] [ref=e13]:
+        - generic [ref=e14]: 
+        - text: Pelan Pelaburan
+      - paragraph [ref=e15]: Pilih pelan yang sesuai dengan modal anda dan teruskan pelaburan dalam beberapa langkah sahaja.
+    - generic [ref=e16]:
+      - article [ref=e17]:
+        - generic [ref=e18]:
+          - heading "Starter" [level=2] [ref=e19]
+          - paragraph [ref=e20]: ROI 2% / hari
+          - generic [ref=e21]:
+            - generic [ref=e22]:
+              - generic [ref=e23]: 
+              - text: 30 hari
+            - generic [ref=e24]:
+              - generic [ref=e25]: 
+              - text: Min RM 100.00
+          - paragraph [ref=e26]: Min RM 100
+        - generic [ref=e28]:
+          - generic [ref=e29]: Jumlah Pelaburan
+          - spinbutton "Jumlah Pelaburan" [ref=e30]: "100"
+          - button "Labur Sekarang" [ref=e31] [cursor=pointer]
+      - article [ref=e32]:
+        - generic [ref=e33]:
+          - heading "Pro" [level=2] [ref=e34]
+          - paragraph [ref=e35]: ROI 5% / hari
+          - generic [ref=e36]:
+            - generic [ref=e37]:
+              - generic [ref=e38]: 
+              - text: 30 hari
+            - generic [ref=e39]:
+              - generic [ref=e40]: 
+              - text: Min RM 1,000.00
+          - paragraph [ref=e41]: Min RM 1000
+        - generic [ref=e43]:
+          - generic [ref=e44]: Jumlah Pelaburan
+          - spinbutton "Jumlah Pelaburan" [ref=e45]: "1000"
+          - button "Labur Sekarang" [ref=e46] [cursor=pointer]
+  - navigation "Bottom navigation" [ref=e47]:
+    - generic [ref=e48]:
+      - link " Deposit" [ref=e49] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/deposit
+        - generic [ref=e50]: 
+        - generic [ref=e51]: Deposit
+      - link " Invest" [ref=e52] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/investment
+        - generic [ref=e53]: 
+        - generic [ref=e54]: Invest
+      - link " Home" [ref=e55] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - generic [ref=e56]: 
+        - generic [ref=e57]: Home
+      - link " Withdraw" [ref=e58] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/withdraw
+        - generic [ref=e59]: 
+        - generic [ref=e60]: Withdraw
+      - link " Transfer" [ref=e61] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e62]: 
+        - generic [ref=e63]: Transfer

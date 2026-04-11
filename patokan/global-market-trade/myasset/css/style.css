@@ -1,0 +1,322 @@
+:root{
+  --bg:#0b1220;
+  --bg2:#131a2a;
+  --card:rgba(255,255,255,.06);
+  --bd:rgba(255,255,255,.12);
+  --tx:#e6e8ee;
+  --mut:#b9bcc8;
+  --acc:#2ea7ff;
+  --shadow:0 10px 30px rgba(0,0,0,.25);
+  --topbar-h: 86px;
+  --topbar-h-sm: 74px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:radial-gradient(900px 500px at 20% 0%, rgba(46,167,255,.15), transparent 60%),
+             linear-gradient(180deg,#070b14,var(--bg));
+  color:var(--tx);
+  overflow-x:hidden;
+}
+a{color:inherit}
+a:hover{text-decoration:none;opacity:.92}
+._in_content_{max-width:1120px;margin:0 auto;padding:0 15px}
+
+/* ===== TOPBAR (single source of truth) ===== */
+.topbar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+
+  height: var(--topbar-h);
+  background: rgba(4, 14, 28, 0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.topbar ._in_content_{
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topbar .brand{
+  margin-left: -50px;   /* coba: -8px / -16px */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* logo: besar tanpa merusak proporsi */
+.topbar .brand .logo{
+  height: clamp(100px, 4.2vw, 56px);
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* actions */
+.topbar .top-actions{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+/* tombol primary */
+.topbar .top-actions .__tL{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+  border-radius: 12px;
+
+  background: #1e88ff;
+  color: #fff;
+  border: 2px solid transparent;
+
+  font-weight: 700;
+  text-decoration: none;
+  transition: .18s ease;
+  white-space: nowrap;
+}
+
+.topbar .top-actions .__tL:hover{
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* tombol secondary (outline) */
+.topbar .top-actions .__tL_alt{
+  background: transparent;
+  border: 2px solid #1e88ff;
+  color: #1e88ff;
+}
+.topbar .top-actions .__tL_alt:hover{
+  background: #1e88ff;
+  color: #fff;
+}
+
+/* content offset biar tidak ketutup topbar */
+body{ padding-top: var(--topbar-h); }
+
+/* ===== MOBILE ===== */
+@media (max-width: 520px){
+  .topbar{ height: var(--topbar-h-sm); }
+  .topbar ._in_content_{ padding: 0 14px; }
+  .topbar .top-actions{ gap: 10px; }
+  .topbar .top-actions .__tL{
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 11px;
+  }
+  body{ padding-top: var(--topbar-h-sm); }
+}
+
+/* Hero */
+.main_header__{position:relative;padding:5px 0 24px;min-height:560px}
+#particles-js{position:absolute;inset:0;pointer-events:none;opacity:.55}
+.hero{position:relative;z-index:1;overflow:hidden;margin-top:12px}
+.hero-left{float:left;width:52%;padding-right:16px}
+.hero-right{float:right;width:48%;text-align:right}
+.l_text{font-family:Roboto,sans-serif;font-weight:800;font-size:52px;line-height:1.05;margin:14px 0 10px}
+.hero-lead{color:var(--mut);font-size:16px;line-height:1.6;max-width:520px}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 18px}
+.btn-ghost{background:transparent !important;border:1px solid rgba(255,255,255,.22) !important;color:#fff !important}
+.btn-accent{background:var(--acc) !important;color:#03101a !important;border:0 !important;font-weight:800}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.cnt_icon_num{
+  min-width:170px;padding:14px 16px;border-radius:14px;background:var(--card);border:1px solid rgba(255,255,255,.10);
+  box-shadow:var(--shadow)
+}
+.cnt_icon_num i{font-size:22px;color:var(--acc)}
+.cnt_icon_num .value{font-family:Roboto,sans-serif;font-weight:800;font-size:22px;margin-top:8px}
+.cnt_icon_num p{margin:6px 0 0;color:var(--mut);font-size:12px;line-height:1.2}
+.r_img{max-width:520px;width:100%;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45))}
+
+/* Sections */
+._seg____header__{text-align:center;font-family:Roboto,sans-serif;font-weight:800;margin:48px 0 18px}
+
+/* =========================
+   REVISI MINIMAL: CARDS GRID
+   ========================= */
+.cards{
+  display:grid;
+  gap:18px;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  align-items:stretch;
+
+  /* biar judul section tetap center kalau ada teks/elemen inline */
+  text-align:initial;
+}
+._seg____{
+  /* sebelumnya inline-block + width fixed bikin numpuk kebawah */
+  display:block;
+  width:auto;
+  margin:0;
+
+  padding:18px;
+  border-radius:14px;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.10);
+  text-align:left;
+  box-shadow:var(--shadow);
+}
+
+/* Kalau ada section yang butuh center, center-in headernya saja */
+._seg____htxt_{font-family:Roboto,sans-serif;font-weight:800;font-size:18px;margin:0 0 10px}
+._txt___{color:var(--mut);line-height:1.6;font-size:14px}
+
+/* Awards */
+.awards-wrap{
+  background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.55)),var(--bg2);
+  padding:26px 0 34px;margin-top:10px;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06)
+}
+
+/* REVISI: item awards tetap flex tapi grid yang atur kolomnya */
+.award-row{
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+.award-row ._seg____{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.award-img{width:66px;height:66px}
+
+/* Advantages */
+.adv{
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+.adv ._seg____{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+._seg___img._simg_{width:54px;height:54px}
+
+/* Testimonials (bootstrap carousel tweaks) */
+.carousel{padding-bottom:44px}
+
+/* pastiin semua konten item center */
+.carousel .item{
+  text-align:center;
+}
+
+/* Turunin titik-titik carousel (indikator) */
+#myCarousel .carousel-indicators{
+  bottom: -15px;   /* makin kecil (lebih minus) = makin turun */
+}
+
+/* opsional: biar tetap di tengah */
+#myCarousel .carousel-indicators{
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  margin-left: 0;
+}
+
+/* avatar tetap center */
+.carousel .img-box{
+  width:120px;height:120px;
+  margin:0 auto;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+  border:2px solid rgba(255,255,255,.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+}
+
+/* INI yang bikin teks testimonial center */
+.carousel .testimonial{
+  max-width:760px;
+  margin:18px auto 10px;
+  text-align:center;
+}
+
+/* nama/country juga center */
+.carousel .overview{
+  text-align:center;
+}
+
+.star-rating i{color:#ffdc12}
+
+/* rapihin list bintang bootstrap */
+.star-rating ul{
+  display:inline-block;
+  padding-left:0;
+  margin:6px auto 0;
+}
+.star-rating ul li{
+  padding:0 2px;
+}
+
+/* Payment bar */
+.paybar{margin-top:40px;background:var(--bg2);padding:22px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.pay-icons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:10px}
+.pay-pill{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);font-weight:800;font-size:12px}
+
+/* Footer */
+.footer{background-size:cover;background-position:center;padding:24px 0 12px}
+.footer-grid{overflow:hidden}
+.foot_side___{float:left;width:25%;padding:0 12px;min-height:170px}
+._fLink{display:block;margin:6px 0;color:var(--acc) !important}
+._cLink{color:#ddd}
+.copyright{padding:18px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--mut);text-align:center}
+.copyright-note{display:block;max-width:720px;margin:0 auto 8px}
+
+/* Notification */
+.notification{position:fixed;left:16px;bottom:18px;z-index:9999;width:320px;display:none}
+.notification-block{
+  background:rgba(20,22,30,0.92);border:1px solid rgba(255,255,255,0.10);
+  border-radius:14px;box-shadow:var(--shadow);padding:12px;display:flex;gap:10px;align-items:center;
+  backdrop-filter: blur(8px);
+}
+.notification-img{width:44px;height:44px;border-radius:12px;background:rgba(46,167,255,0.16);border:1px solid rgba(46,167,255,0.25);display:flex;align-items:center;justify-content:center}
+.notification-img i{color:var(--acc);font-size:20px}
+.notification-title{font-weight:800;font-family:Roboto,sans-serif;font-size:13px;opacity:.9}
+.notification-text{font-size:12px;margin-top:3px}
+
+/* Auth pages */
+.auth-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.auth-card{width:100%;max-width:520px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.form-control{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.2);color:#fff}
+label{display:block;margin:10px 0 6px}
+.alert{padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,80,80,.12)}
+
+/* Responsive */
+@media (max-width: 992px){
+  .hero-left,.hero-right{float:none;width:100%;text-align:left}
+  .hero-right{margin-top:14px}
+  .foot_side___{width:50%;margin-bottom:14px}
+
+  /* REVISI: grid turun jadi 2 kolom */
+  .cards{grid-template-columns:repeat(2, minmax(0, 1fr))}
+  .award-row{grid-template-columns:repeat(2, minmax(0, 1fr))}
+  .adv{grid-template-columns:repeat(2, minmax(0, 1fr))}
+}
+@media (max-width: 560px){
+  .l_text{font-size:40px}
+  .cnt_icon_num{min-width:140px}
+  .foot_side___{width:100%}
+  .notification{width:calc(100% - 32px)}
+
+  /* REVISI: hp jadi 1 kolom */
+  .cards{grid-template-columns:1fr}
+  .award-row{grid-template-columns:1fr}
+  .adv{grid-template-columns:1fr}
+}

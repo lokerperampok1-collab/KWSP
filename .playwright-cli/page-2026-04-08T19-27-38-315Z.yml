@@ -1,0 +1,48 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "KWSP Malaysia KWSP Malaysia Percaya pada pelaburan anda" [ref=e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - img "KWSP Malaysia" [ref=e5]
+        - generic [ref=e6]:
+          - text: KWSP Malaysia
+          - generic [ref=e7]: Percaya pada pelaburan anda
+      - generic [ref=e8]:
+        - button "Admin KWSP " [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]: Admin KWSP
+          - generic [ref=e11]: 
+        - text:    
+    - generic [ref=e12]:
+      - heading " Deposit RM" [level=2] [ref=e13]:
+        - generic [ref=e14]: 
+        - text: Deposit RM
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e17]: Jumlah (RM)
+          - spinbutton [ref=e18]
+        - generic [ref=e19]:
+          - generic [ref=e20]: Nota / Rujukan (Optional)
+          - textbox "e.g. Transfer Bank" [ref=e21]
+        - button "Hantar Permintaan Deposit" [ref=e22] [cursor=pointer]
+  - navigation "Bottom navigation" [ref=e23]:
+    - generic [ref=e24]:
+      - link " Deposit" [ref=e25] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/deposit
+        - generic [ref=e26]: 
+        - generic [ref=e27]: Deposit
+      - link " Invest" [ref=e28] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/investment
+        - generic [ref=e29]: 
+        - generic [ref=e30]: Invest
+      - link " Home" [ref=e31] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - generic [ref=e32]: 
+        - generic [ref=e33]: Home
+      - link " Withdraw" [ref=e34] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/withdraw
+        - generic [ref=e35]: 
+        - generic [ref=e36]: Withdraw
+      - link " Transfer" [ref=e37] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e38]: 
+        - generic [ref=e39]: Transfer

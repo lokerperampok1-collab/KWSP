@@ -1,0 +1,66 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "KWSP Malaysia KWSP Malaysia Percaya pada pelaburan anda" [ref=e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - img "KWSP Malaysia" [ref=e5]
+        - generic [ref=e6]:
+          - text: KWSP Malaysia
+          - generic [ref=e7]: Percaya pada pelaburan anda
+      - generic [ref=e8]:
+        - button "Admin KWSP " [expanded] [active] [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]: Admin KWSP
+          - generic [ref=e11]: 
+        - menu "User menu" [ref=e44]:
+          - link " Profil" [ref=e45] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/profile
+            - generic [ref=e46]: 
+            - text: Profil
+          - link " KYC" [ref=e47] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/kyc
+            - generic [ref=e48]: 
+            - text: KYC
+          - link " Admin" [ref=e49] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin
+            - generic [ref=e50]: 
+            - text: Admin
+          - button " Log Keluar" [ref=e53] [cursor=pointer]:
+            - generic [ref=e54]: 
+            - text: Log Keluar
+    - generic [ref=e12]:
+      - heading " Deposit RM" [level=1] [ref=e13]:
+        - generic [ref=e14]: 
+        - text: Deposit RM
+      - paragraph [ref=e15]: Masukkan jumlah deposit dan rujukan pembayaran untuk diproses oleh pasukan kami.
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: Jumlah (RM)
+        - spinbutton "Jumlah (RM)" [ref=e21]
+      - generic [ref=e22]:
+        - generic [ref=e23]: Nota / Rujukan
+        - textbox "Nota / Rujukan" [ref=e24]:
+          - /placeholder: "Contoh: Transfer Bank"
+        - paragraph [ref=e25]: Tambah maklumat rujukan supaya semakan pembayaran lebih cepat.
+      - button "Hantar Permintaan Deposit" [ref=e26] [cursor=pointer]
+  - navigation "Bottom navigation" [ref=e27]:
+    - generic [ref=e28]:
+      - link " Deposit" [ref=e29] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/deposit
+        - generic [ref=e30]: 
+        - generic [ref=e31]: Deposit
+      - link " Invest" [ref=e32] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/investment
+        - generic [ref=e33]: 
+        - generic [ref=e34]: Invest
+      - link " Home" [ref=e35] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - generic [ref=e36]: 
+        - generic [ref=e37]: Home
+      - link " Withdraw" [ref=e38] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/withdraw
+        - generic [ref=e39]: 
+        - generic [ref=e40]: Withdraw
+      - link " Transfer" [ref=e41] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e42]: 
+        - generic [ref=e43]: Transfer

@@ -1,0 +1,116 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "KWSP Malaysia KWSP Malaysia Percaya pada pelaburan anda" [ref=e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - img "KWSP Malaysia" [ref=e5]
+        - generic [ref=e6]:
+          - text: KWSP Malaysia
+          - generic [ref=e7]: Percaya pada pelaburan anda
+      - button "Admin KWSP " [ref=e9] [cursor=pointer]:
+        - generic [ref=e10]: Admin KWSP
+        - generic [ref=e11]: 
+    - region "Balance and chart" [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - generic [ref=e16]: Jumlah Keuntungan
+            - generic [ref=e17]:
+              - generic [ref=e18]: 9,000.00
+              - generic [ref=e19]: MYR
+          - generic [ref=e20]:
+            - generic [ref=e21]:
+              - generic [ref=e22]: 
+              - text: "Untung:"
+              - generic [ref=e23]: MYR
+              - generic [ref=e24]: "0.00"
+            - generic [ref=e25]:
+              - generic [ref=e26]: 
+              - text: "Sertai: 09 Apr 2026"
+        - iframe [ref=e30]:
+          - generic [ref=f2e2]:
+            - toolbar [ref=f2e6]:
+              - generic [ref=f2e10]:
+                - generic [ref=f2e11]:
+                  - button "Symbol search" [ref=f2e12]:
+                    - img [ref=f2e13]:
+                      - img [ref=f2e14]
+                    - generic [ref=f2e16]: USOIL
+                  - button "Compare symbols" [ref=f2e17]:
+                    - img [ref=f2e18]:
+                      - img [ref=f2e19]
+                - generic [ref=f2e25]:
+                  - radiogroup [ref=f2e26]:
+                    - radio "1 minute" [ref=f2e27]:
+                      - generic [ref=f2e29]: 1m
+                    - radio "30 minutes" [ref=f2e30]:
+                      - generic [ref=f2e32]: 30m
+                    - radio "1 hour" [ref=f2e33]:
+                      - generic [ref=f2e35]: 1h
+                    - radio "1 day" [checked] [ref=f2e36]:
+                      - generic [ref=f2e38]: D
+                  - button "Chart interval" [ref=f2e39]:
+                    - img [ref=f2e42]:
+                      - img [ref=f2e43]
+                - generic [ref=f2e48]:
+                  - radiogroup [ref=f2e49]:
+                    - radio "Bars" [ref=f2e50]:
+                      - img [ref=f2e51]:
+                        - img [ref=f2e52]
+                    - radio "Candles" [checked] [ref=f2e54]:
+                      - img [ref=f2e55]:
+                        - img [ref=f2e56]
+                    - radio "Area" [ref=f2e61]:
+                      - img [ref=f2e62]:
+                        - img [ref=f2e63]
+                  - button "Bar's style" [ref=f2e65]:
+                    - img [ref=f2e68]:
+                      - img [ref=f2e69]
+                - button "Indicators, metrics, and strategies" [ref=f2e75]:
+                  - img [ref=f2e76]:
+                    - img [ref=f2e77]
+                  - generic [ref=f2e109]: Indicators
+                - button "Take a snapshot" [ref=f2e81]:
+                  - img [ref=f2e83]:
+                    - img [ref=f2e84]
+            - 'region "Chart #1" [ref=f2e90]':
+              - generic "Chart for TVC:USOIL, 1 day" [ref=f2e96]
+    - region "Quick stats" [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e34]: 
+        - generic [ref=e35]: Total pengeluaran
+        - generic [ref=e36]: MYR 10,000.00
+      - generic [ref=e37]:
+        - generic [ref=e39]: 
+        - generic [ref=e40]: Total deposit
+        - generic [ref=e41]: MYR 15,000.00
+      - generic [ref=e42]:
+        - generic [ref=e44]: 
+        - generic [ref=e45]: Total pelaburan
+        - generic [ref=e46]: MYR 1,000.00
+      - generic [ref=e47]:
+        - generic [ref=e49]: 
+        - generic [ref=e50]: Pelaburan aktif
+        - generic [ref=e51]: MYR 1,000.00
+  - navigation "Bottom navigation" [ref=e52]:
+    - generic [ref=e53]:
+      - link " Deposit" [ref=e54] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/deposit
+        - generic [ref=e55]: 
+        - generic [ref=e56]: Deposit
+      - link " Invest" [ref=e57] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/investment
+        - generic [ref=e58]: 
+        - generic [ref=e59]: Invest
+      - link " Home" [ref=e60] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - generic [ref=e61]: 
+        - generic [ref=e62]: Home
+      - link " Withdraw" [ref=e63] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/withdraw
+        - generic [ref=e64]: 
+        - generic [ref=e65]: Withdraw
+      - link " Transfer" [ref=e66] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e67]: 
+        - generic [ref=e68]: Transfer

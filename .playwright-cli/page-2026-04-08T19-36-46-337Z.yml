@@ -1,0 +1,53 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "KWSP Malaysia KWSP Malaysia Percaya pada pelaburan anda" [ref=e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - img "KWSP Malaysia" [ref=e5]
+        - generic [ref=e6]:
+          - text: KWSP Malaysia
+          - generic [ref=e7]: Percaya pada pelaburan anda
+      - generic [ref=e8]:
+        - button "Admin KWSP " [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]: Admin KWSP
+          - generic [ref=e11]: 
+        - text:    
+    - generic [ref=e12]:
+      - heading " Pengesahan Identiti (KYC)" [level=1] [ref=e13]:
+        - generic [ref=e14]: 
+        - text: Pengesahan Identiti (KYC)
+      - paragraph [ref=e15]: Muat naik dokumen yang jelas untuk mempercepat proses semakan dan membuka akses pelaburan penuh.
+    - generic [ref=e17]:
+      - paragraph [ref=e18]: Pastikan setiap fail terang, tidak kabur, dan memaparkan keseluruhan dokumen.
+      - generic [ref=e19]:
+        - generic [ref=e20]: Kad Pengenalan (Depan)
+        - button "Kad Pengenalan (Depan)" [ref=e21]
+      - generic [ref=e22]:
+        - generic [ref=e23]: Kad Pengenalan (Belakang)
+        - button "Kad Pengenalan (Belakang)" [ref=e24]
+      - generic [ref=e25]:
+        - generic [ref=e26]: Selfie dengan IC
+        - button "Selfie dengan IC" [ref=e27]
+      - button "Muat Naik Dokumen" [ref=e28] [cursor=pointer]
+  - navigation "Bottom navigation" [ref=e29]:
+    - generic [ref=e30]:
+      - link " Deposit" [ref=e31] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/deposit
+        - generic [ref=e32]: 
+        - generic [ref=e33]: Deposit
+      - link " Invest" [ref=e34] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/investment
+        - generic [ref=e35]: 
+        - generic [ref=e36]: Invest
+      - link " Home" [ref=e37] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - generic [ref=e38]: 
+        - generic [ref=e39]: Home
+      - link " Withdraw" [ref=e40] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/withdraw
+        - generic [ref=e41]: 
+        - generic [ref=e42]: Withdraw
+      - link " Transfer" [ref=e43] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e44]: 
+        - generic [ref=e45]: Transfer

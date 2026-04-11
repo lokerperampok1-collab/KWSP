@@ -1,0 +1,15 @@
+# Jangan izinkan directory listing
+Options -Indexes
+
+# Matikan eksekusi script di uploads
+php_flag engine off
+
+# Jika php_flag tidak didukung, minimal blok file php
+<FilesMatch "\.(php|phtml|php3|php4|php5|phar)$">
+  Require all denied
+</FilesMatch>
+
+# Security headers untuk file statis
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>

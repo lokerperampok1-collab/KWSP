@@ -1,0 +1,1 @@
+No Content: https://gold-xtrading.com/trade/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js

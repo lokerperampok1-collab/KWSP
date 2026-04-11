@@ -1,0 +1,81 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - link "KWSP Logo KWSP MALAYSIA" [ref=e4] [cursor=pointer]:
+      - /url: /
+      - img "KWSP Logo" [ref=e5]
+      - generic [ref=e6]: KWSP MALAYSIA
+    - generic [ref=e7]:
+      - link "LOG MASUK" [ref=e8] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/login
+      - link "DAFTAR AKAUN" [ref=e9] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/register
+  - generic [ref=e11]:
+    - generic [ref=e12]:
+      - generic [ref=e13]: Platform Aktif • Selamat • Dipercayai
+      - heading "PENAWAR MASA DEPAN KEWANGAN ANDA" [level=1] [ref=e15]:
+        - text: PENAWAR
+        - text: MASA DEPAN
+        - text: KEWANGAN ANDA
+      - paragraph [ref=e16]: Melabur dengan bijak bersama KWSP Malaysia. Platform pelaburan yang dipercayai untuk pulangan konsisten dan masa depan kewangan yang stabil.
+      - generic [ref=e17]:
+        - link " Mula Melabur" [ref=e18] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/register
+          - generic [ref=e19]: 
+          - text: Mula Melabur
+        - link "Ketahui Lebih Lanjut " [ref=e20] [cursor=pointer]:
+          - /url: "#advantages"
+          - text: Ketahui Lebih Lanjut
+          - generic [ref=e21]: 
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: 5,200+
+          - generic [ref=e25]: Ahli Aktif
+        - generic [ref=e26]:
+          - generic [ref=e27]: RM 12M+
+          - generic [ref=e28]: Jumlah Pelaburan
+        - generic [ref=e29]:
+          - generic [ref=e30]: 99.9%
+          - generic [ref=e31]: Uptime
+    - img "KWSP Investment Platform" [ref=e33]
+  - generic [ref=e34]:
+    - heading "KELEBIHAN MELABUR DENGAN KAMI" [level=2] [ref=e35]:
+      - text: KELEBIHAN MELABUR
+      - text: DENGAN KAMI
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - generic [ref=e40]: 
+        - heading "Ketelasan & Pantas" [level=3] [ref=e41]
+        - generic [ref=e42]: Proses pelaburan dan pengeluaran yang efisien tanpa birokrasi yang rumit.
+      - generic [ref=e43]:
+        - generic [ref=e45]: 
+        - heading "Keselamatan Terjamin" [level=3] [ref=e46]
+        - generic [ref=e47]: Data dan dana anda dilindungi dengan teknologi enkripsi gred bank.
+      - generic [ref=e48]:
+        - generic [ref=e50]: 
+        - heading "Analisis Pakar" [level=3] [ref=e51]
+        - generic [ref=e52]: Akses kepada pelan pelaburan yang dioptimumkan oleh algoritma kecerdasan pasaran global.
+  - generic [ref=e54]:
+    - heading "Sedia Untuk Bermula?" [level=2] [ref=e55]
+    - paragraph [ref=e56]: Daftar akaun percuma hari ini dan mulakan perjalanan pelaburan anda bersama ribuan ahli lain.
+    - link " Daftar Sekarang" [ref=e57] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/register
+      - generic [ref=e58]: 
+      - text: Daftar Sekarang
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - img "KWSP Logo" [ref=e62]
+        - paragraph [ref=e63]: KWSP Malaysia komited untuk membantu ahli membina kekayaan melalui pelaburan pasaran global yang inovatif dan selamat.
+      - generic [ref=e64]:
+        - heading "PAUTAN PANTAS" [level=4] [ref=e65]
+        - list [ref=e66]:
+          - listitem [ref=e67]:
+            - link "Utama" [ref=e68] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e69]:
+            - link "Log Masuk" [ref=e70] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/login
+          - listitem [ref=e71]:
+            - link "Pendaftaran" [ref=e72] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/register
+    - paragraph [ref=e75]: © 2026 KWSP Malaysia. Semua Hak Terpelihara.

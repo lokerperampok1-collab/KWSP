@@ -1,0 +1,44 @@
+- main [ref=e2]:
+  - region "Login" [ref=e3]:
+    - generic [ref=e4]:
+      - link "Back to home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "KWSP Malaysia" [ref=e6]
+        - generic [ref=e7]:
+          - text: KWSP Malaysia
+          - generic [ref=e8]: Akses ahli selamat
+      - generic [ref=e9]: Akaun
+      - heading "Selamat kembali." [level=1] [ref=e11]
+      - paragraph [ref=e12]: Log masuk untuk mengakses dan melihat gambaran keseluruhan akaun, aktiviti, dan kemas kini pasaran terkini anda dengan selamat.
+      - generic [ref=e13]:
+        - link " Utama" [ref=e14] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e15]: 
+          - text: Utama
+        - link " Daftar" [ref=e16] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/register
+          - generic [ref=e17]: 
+          - text: Daftar
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: E-mel
+        - textbox "E-mel" [active] [ref=e22]:
+          - /placeholder: anda@email.com
+      - generic [ref=e23]:
+        - generic [ref=e24]: Kata Laluan
+        - generic [ref=e25]:
+          - textbox "Kata Laluan" [ref=e26]:
+            - /placeholder: ••••••••
+          - button "Toggle password" [ref=e27] [cursor=pointer]:
+            - generic [ref=e28]: 
+      - generic [ref=e29]:
+        - generic [ref=e30] [cursor=pointer]:
+          - checkbox "Kekal log masuk" [ref=e31]
+          - text: Kekal log masuk
+        - link "Lupa kata laluan?" [ref=e32] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/forgot-password
+      - button "Log masuk" [ref=e34] [cursor=pointer]
+      - paragraph [ref=e35]:
+        - text: Belum mempunyai akaun?
+        - link "Cipta satu" [ref=e36] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/register
