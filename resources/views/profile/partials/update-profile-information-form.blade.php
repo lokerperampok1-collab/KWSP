@@ -75,7 +75,7 @@
 
             <div class="gmtd-field">
                 <label class="gmtd-label" for="bank_account">{{ __('Nombor Akaun Bank') }}</label>
-                <input id="bank_account" name="bank_account" type="text" class="gmtd-input" value="{{ $user->bank_account ? $user->masked_bank_account : old('bank_account') }}" placeholder="1234567890" {{ $user->bank_account ? 'readonly' : '' }} style="{{ $user->bank_account ? 'background-color: #f3f4f6; cursor: not-allowed;' : '' }}">
+                <input id="bank_account" name="bank_account" type="text" class="gmtd-input" value="{{ old('bank_account', $user->bank_account) }}" placeholder="1234567890" {{ $user->bank_account ? 'readonly' : '' }} style="{{ $user->bank_account ? 'background-color: #f3f4f6; cursor: not-allowed;' : '' }}">
                 <x-input-error class="mt-2" :messages="$errors->get('bank_account')" />
             </div>
         </div>

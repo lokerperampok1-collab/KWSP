@@ -93,10 +93,9 @@
                     </div>
                     <div class="gmtd-field">
                         <label class="gmtd-label">Nombor Akaun</label>
-                        <input type="text" class="gmtd-input" value="{{ $user->bank_account }}" readonly style="background:#f1f5f9; cursor: not-allowed;">
+                        <input type="text" class="gmtd-input" value="{{ $user->masked_bank_account }}" readonly style="background:#f1f5f9; cursor: not-allowed;">
                     </div>
                 </div>
-                <p class="gmtd-note"><i class="fa fa-lock" style="margin-right:4px;"></i> Maklumat bank diambil dari Profil. <a href="{{ route('profile.edit') }}" style="color:var(--kwsp-blue-action); font-weight:700;">Tukar di sini</a>.</p>
 
                 <div class="gmtd-field">
                     <label class="gmtd-label" for="withdraw_amount">Jumlah Pengeluaran (RM)</label>
