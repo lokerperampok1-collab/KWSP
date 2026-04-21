@@ -65,21 +65,34 @@ class WalletController extends Controller
 
         $amount = (float) $request->amount;
 
-        if ($user->wallet->balance < $amount) {
-            return back()->withErrors(['amount' => 'Baki tidak mencukupi. Baki anda: RM ' . number_format($user->wallet->balance, 2) . '.']);
+        if ($amount < 10) {
+            return back()->withErrors(['amount' => 'Jumlah minimum pengeluaran ialah RM 10.']);
         }
 
-        // Store withdrawal request (pending admin approval)
-        $user->transactions()->create([
-            'currency' => 'MYR',
-            'type' => 'withdraw',
-            'status' => 'pending',
-            'amount' => $amount,
-            'note' => 'Bank: ' . $user->bank_name . ' | Akaun: ' . $user->bank_account . ($request->note ? ' | Nota: ' . $request->note : ''),
-        ]);
+        try {
+            DB::transaction(function () use ($user, $amount, $request) {
+                // Lock the wallet record for update to prevent concurrent deductions
+                $wallet = $user->wallet()->lockForUpdate()->first();
 
-        // Immediate deduction
-        $user->wallet->decrement('balance', $amount);
+                if ($wallet->balance < $amount) {
+                    throw new \Exception('Baki tidak mencukupi.');
+                }
+
+                // Store withdrawal request (pending admin approval)
+                $user->transactions()->create([
+                    'currency' => 'MYR',
+                    'type' => 'withdraw',
+                    'status' => 'pending',
+                    'amount' => $amount,
+                    'note' => 'Bank: ' . $user->bank_name . ' | Akaun: ' . $user->bank_account . ($request->note ? ' | Nota: ' . $request->note : ''),
+                ]);
+
+                // Immediate deduction
+                $wallet->decrement('balance', $amount);
+            });
+        } catch (\Exception $e) {
+            return back()->withErrors(['amount' => $e->getMessage()]);
+        }
 
         return redirect()->route('dashboard')->with('ok', 'Permintaan pengeluaran RM ' . number_format($amount, 2) . ' telah dihantar.');
     }
@@ -121,11 +134,22 @@ class WalletController extends Controller
         }
 
         DB::transaction(function () use ($sender, $receiver, $amount, $fee, $totalDeduction, $request) {
+            // Lock sender wallet
+            $senderWallet = $sender->wallet()->lockForUpdate()->first();
+            
+            // Re-verify balance after lock
+            if ($senderWallet->balance < $totalDeduction) {
+                throw new \Exception('Baki tidak mencukupi untuk pindahan ini.');
+            }
+
+            // Lock receiver wallet
+            $receiverWallet = $receiver->wallet()->lockForUpdate()->first();
+
             // Deduct from sender (amount + fee)
-            $sender->wallet->decrement('balance', $totalDeduction);
+            $senderWallet->decrement('balance', $totalDeduction);
 
             // Credit to receiver (amount only)
-            $receiver->wallet->increment('balance', $amount);
+            $receiverWallet->increment('balance', $amount);
 
             // Transaction record: sender
             $sender->transactions()->create([

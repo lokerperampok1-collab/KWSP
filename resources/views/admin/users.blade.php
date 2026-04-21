@@ -32,6 +32,9 @@
                 <td>
                     <div style="font-weight: 800; color: #00458C;">{{ $user->name }}</div>
                     <div style="font-size: 11px; color: #64748b;">Member since {{ $user->created_at->format('M Y') }}</div>
+                    @if($user->bank_name)
+                        <div style="font-size: 10px; color: #00458C; margin-top: 4px;"><i class="fa fa-university"></i> {{ $user->bank_name }} ({{ $user->masked_bank_account }})</div>
+                    @endif
                 </td>
                 <td>
                     <div style="font-weight: 700;">{{ $user->email }}</div>

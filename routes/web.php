@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/investment', [InvestmentController::class, 'invest'])->name('investment.invest');
 
     // Admin Group
-    Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/users', [AdminController::class, 'users'])->name('admin.users');
         Route::get('/kyc', [AdminController::class, 'kyc'])->name('admin.kyc');

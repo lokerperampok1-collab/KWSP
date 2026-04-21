@@ -49,4 +49,16 @@ class User extends Authenticatable
     {
         return $this->hasOne(KycRequest::class);
     }
+
+    /**
+     * Get masked bank account for security.
+     * Example: *******6789
+     */
+    public function getMaskedBankAccountAttribute()
+    {
+        if (empty($this->bank_account)) return '-';
+        $len = strlen($this->bank_account);
+        if ($len <= 4) return '****' . $this->bank_account;
+        return str_repeat('*', $len - 4) . substr($this->bank_account, -4);
+    }
 }
