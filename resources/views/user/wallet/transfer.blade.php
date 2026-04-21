@@ -86,6 +86,51 @@
         </form>
     </div>
 </section>
+
+<div class="gmtd-pagehead" style="margin-top: 30px;">
+    <h1><i class="fa fa-history"></i> Riwayat Pindahan</h1>
+    <p>Senarai pindahan dana anda yang terkini.</p>
+</div>
+
+<section class="gmtd-surface gmtd-surface--soft">
+    <div class="gmtd-stack">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Tarikh</th>
+                        <th>Jenis</th>
+                        <th>Jumlah (RM)</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse($transactions as $tx)
+                        <tr>
+                            <td class="text-nowrap">{{ $tx->created_at->format('d M Y, h:i A') }}</td>
+                            <td>
+                                @if($tx->type === 'transfer_in')
+                                    <span class="badge badge-success">Masuk</span>
+                                @else
+                                    <span class="badge badge-info">Keluar</span>
+                                @endif
+                            </td>
+                            <td class="font-bold @if($tx->type === 'transfer_in') text-success @else text-danger @endif">
+                                @if($tx->type === 'transfer_in') + @else - @endif 
+                                RM {{ number_format($tx->amount, 2) }}
+                            </td>
+                            <td class="text-sm">{{ $tx->note ?? '-' }}</td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="4" class="text-center py-4 text-muted small">Tiada riwayat pindahan setakat ini.</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 @endsection
 
 @push('scripts')

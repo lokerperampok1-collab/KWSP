@@ -481,6 +481,21 @@ body.corporate-light *::after {
     background: #F8FAFF !important;
 }
 
+.gmtd-withdraw-history {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+.gmtd-withdraw-history__table {
+    width: 100% !important;
+    margin: 0 auto !important;
+    table-layout: fixed !important;
+}
+.gmtd-withdraw-history__table th,
+.gmtd-withdraw-history__table td {
+    vertical-align: middle !important;
+}
+
 /* ── Actions Row ── */
 .gmtd-actions {
     display: flex !important;
@@ -796,6 +811,41 @@ body.corporate-light *::after {
         justify-content: flex-start !important;
     }
     .gmtd-chart__inner { height: 300px !important; }
+    .gmtd-withdraw-history {
+        overflow-x: hidden !important;
+    }
+    .gmtd-withdraw-history__table th,
+    .gmtd-withdraw-history__table td {
+        text-align: center !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+    }
+    .gmtd-withdraw-history__table th {
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+    }
+    .gmtd-withdraw-history__table th:nth-child(1),
+    .gmtd-withdraw-history__table td:nth-child(1) {
+        width: 26% !important;
+    }
+    .gmtd-withdraw-history__table th:nth-child(2),
+    .gmtd-withdraw-history__table td:nth-child(2) {
+        width: 21% !important;
+    }
+    .gmtd-withdraw-history__table th:nth-child(3),
+    .gmtd-withdraw-history__table td:nth-child(3) {
+        width: 31% !important;
+    }
+    .gmtd-withdraw-history__table th:nth-child(4),
+    .gmtd-withdraw-history__table td:nth-child(4) {
+        width: 22% !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: nowrap !important;
+    }
     .gmtd-plan {
         flex-direction: column !important;
         align-items: stretch !important;
@@ -835,6 +885,15 @@ body.corporate-light *::after {
         gap: 6px !important;
     }
     .gmtd-chart__inner { height: 258px !important; }
+    .gmtd-withdraw-history__table th,
+    .gmtd-withdraw-history__table td {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+        font-size: 12px !important;
+    }
+    .gmtd-withdraw-history__table th {
+        font-size: 10px !important;
+    }
     .gmtd-upload__card {
         align-items: flex-start !important;
         flex-direction: column !important;

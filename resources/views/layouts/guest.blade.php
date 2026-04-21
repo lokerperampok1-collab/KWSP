@@ -17,7 +17,16 @@
     <link rel="stylesheet" href="{{ asset('custom_ui.css') }}">
 
     <style>
-        body{font-family:'Poppins', 'Plus Jakarta Sans', sans-serif}
+        body { 
+            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif; 
+            line-height: var(--leading-body);
+            color: var(--text-main);
+        }
+        /* Accessible Focus Rings */
+        :focus-visible {
+            outline: 3px solid var(--kwsp-blue-light);
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body class="corporate-light">

@@ -8,6 +8,7 @@ body.corporate-light {
     background-color: var(--bg-main) !important;
     color: var(--text-main) !important;
     font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+    line-height: var(--leading-body) !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -150,6 +151,10 @@ body.corporate-light {
     font-weight: 600 !important;
     transition: all var(--duration-normal) var(--ease-spring) !important;
     text-decoration: none !important;
+    outline: none !important;
+}
+.gmtd-nav__wrap a:focus-visible, .gmtd-nav a:focus-visible {
+    box-shadow: 0 0 0 3px var(--kwsp-blue-light) !important;
 }
 .gmtd-nav__wrap a:hover, .gmtd-nav a:hover {
     background: var(--kwsp-blue-pale) !important;
@@ -224,7 +229,7 @@ img.logo, .gmtd-brand img, .brand img {
 /* ── Flash / Success messages ── */
 .alert-success, .alert-info {
     background: var(--kwsp-green-pale) !important;
-    color: #065f46 !important;
+    color: var(--kwsp-green-text) !important;
     border: 1px solid #a7f3d0 !important;
     border-radius: var(--radius-md) !important;
     animation: kwspSlideDown var(--duration-slow) var(--ease-spring) !important;

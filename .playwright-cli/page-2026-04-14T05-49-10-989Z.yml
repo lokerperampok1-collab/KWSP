@@ -1,0 +1,32 @@
+- main [ref=e2]:
+  - region "Login" [ref=e3]:
+    - generic [ref=e4]:
+      - link "Back to home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "KWSP EPF" [ref=e6]
+      - generic [ref=e7]: Akaun
+      - heading "Selamat kembali." [level=1] [ref=e9]
+      - paragraph [ref=e10]: Log masuk untuk mengakses dan melihat gambaran keseluruhan akaun, aktiviti, dan kemas kini pasaran terkini anda dengan selamat.
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]: E-mel
+        - textbox "E-mel" [active] [ref=e15]:
+          - /placeholder: anda@email.com
+      - generic [ref=e16]:
+        - generic [ref=e17]: Kata Laluan
+        - generic [ref=e18]:
+          - textbox "Kata Laluan" [ref=e19]:
+            - /placeholder: ••••••••
+          - button "Toggle password" [ref=e20] [cursor=pointer]:
+            - generic [ref=e21]: 
+      - generic [ref=e22]:
+        - generic [ref=e23] [cursor=pointer]:
+          - checkbox "Kekal log masuk" [ref=e24]
+          - text: Kekal log masuk
+        - link "Lupa kata laluan?" [ref=e25] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/forgot-password
+      - button "Log masuk" [ref=e27] [cursor=pointer]
+      - paragraph [ref=e28]:
+        - text: Belum mempunyai akaun?
+        - link "Cipta satu" [ref=e29] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/register

@@ -2,14 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Traits\AutoMaturity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    use AutoMaturity;
+
     public function index()
     {
         $user = Auth::user();
+        
+        // Trigger auto maturity check
+        $this->checkMaturity($user);
         
         // Ensure wallet exists
         $wallet = $user->wallet ?: $user->wallet()->create(['currency' => 'MYR', 'balance' => 0.00]);

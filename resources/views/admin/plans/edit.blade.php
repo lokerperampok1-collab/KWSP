@@ -15,23 +15,28 @@
         
         <div class="gmtd-row">
             <div class="gmtd-field">
-                <label class="gmtd-label">Plan Name</label>
-                <input type="text" name="name" class="gmtd-input" value="{{ $plan->name }}" required>
+                <label class="gmtd-label">Tier</label>
+                <select name="tier" class="gmtd-input" style="background-color: white;" required>
+                    <option value="BASIC" {{ $plan->tier == 'BASIC' ? 'selected' : '' }}>BASIC</option>
+                    <option value="GOLD" {{ $plan->tier == 'GOLD' ? 'selected' : '' }}>GOLD</option>
+                    <option value="DIAMOND" {{ $plan->tier == 'DIAMOND' ? 'selected' : '' }}>DIAMOND</option>
+                    <option value="VVIP" {{ $plan->tier == 'VVIP' ? 'selected' : '' }}>VVIP</option>
+                </select>
             </div>
             <div class="gmtd-field">
-                <label class="gmtd-label">ROI Daily (%)</label>
-                <input type="number" step="0.01" name="roi_daily_percent" class="gmtd-input" value="{{ $plan->roi_daily_percent }}" required>
+                <label class="gmtd-label">Plan Name</label>
+                <input type="text" name="name" class="gmtd-input" value="{{ $plan->name }}" required>
             </div>
         </div>
 
         <div class="gmtd-row">
             <div class="gmtd-field">
-                <label class="gmtd-label">Min. Amount (RM)</label>
-                <input type="number" name="min_amount" class="gmtd-input" value="{{ $plan->min_amount }}" required>
+                <label class="gmtd-label">Price (RM)</label>
+                <input type="number" step="0.01" name="price" class="gmtd-input" value="{{ $plan->price }}" required>
             </div>
             <div class="gmtd-field">
-                <label class="gmtd-label">Max. Amount (RM)</label>
-                <input type="number" name="max_amount" class="gmtd-input" value="{{ $plan->max_amount }}" placeholder="Empty for Unlimited">
+                <label class="gmtd-label">Target Return (RM)</label>
+                <input type="number" step="0.01" name="target_return" class="gmtd-input" value="{{ $plan->target_return }}" required>
             </div>
         </div>
 

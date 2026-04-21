@@ -14,30 +14,35 @@
         
         <div class="gmtd-row">
             <div class="gmtd-field">
-                <label class="gmtd-label">Plan Name</label>
-                <input type="text" name="name" class="gmtd-input" placeholder="e.g. Starter Plan" required>
+                <label class="gmtd-label">Tier</label>
+                <select name="tier" class="gmtd-input" style="background-color: white;" required>
+                    <option value="BASIC">BASIC</option>
+                    <option value="GOLD">GOLD</option>
+                    <option value="DIAMOND">DIAMOND</option>
+                    <option value="VVIP">VVIP</option>
+                </select>
             </div>
             <div class="gmtd-field">
-                <label class="gmtd-label">ROI Daily (%)</label>
-                <input type="number" step="0.01" name="roi_daily_percent" class="gmtd-input" placeholder="0.5" required>
+                <label class="gmtd-label">Plan Name</label>
+                <input type="text" name="name" class="gmtd-input" placeholder="e.g. BASIC 1" required>
             </div>
         </div>
 
         <div class="gmtd-row">
             <div class="gmtd-field">
-                <label class="gmtd-label">Min. Amount (RM)</label>
-                <input type="number" name="min_amount" class="gmtd-input" value="100" required>
+                <label class="gmtd-label">Price (RM)</label>
+                <input type="number" step="0.01" name="price" class="gmtd-input" placeholder="500.00" required>
             </div>
             <div class="gmtd-field">
-                <label class="gmtd-label">Max. Amount (RM)</label>
-                <input type="number" name="max_amount" class="gmtd-input" placeholder="Empty for Unlimited">
+                <label class="gmtd-label">Target Return (RM)</label>
+                <input type="number" step="0.01" name="target_return" class="gmtd-input" placeholder="15000.00" required>
             </div>
         </div>
 
         <div class="gmtd-row">
             <div class="gmtd-field">
                 <label class="gmtd-label">Duration (Days)</label>
-                <input type="number" name="duration_days" class="gmtd-input" value="30" required>
+                <input type="number" name="duration_days" class="gmtd-input" value="7" required>
             </div>
             <div class="gmtd-field">
                 <label class="gmtd-label">Sort Order</label>

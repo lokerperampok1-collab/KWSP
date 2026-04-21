@@ -1,0 +1,43 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "KWSP EPF" [ref=e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - img "KWSP EPF" [ref=e5]
+      - button "Admin KWSP " [ref=e7] [cursor=pointer]:
+        - generic [ref=e8]: Admin KWSP
+        - generic [ref=e9]: 
+    - link " Kembali ke Dashboard" [ref=e11] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - generic [ref=e12]: 
+      - text: Kembali ke Dashboard
+    - generic [ref=e13]:
+      - heading " Pending KYC Requests" [level=1] [ref=e14]:
+        - generic [ref=e15]: 
+        - text: Pending KYC Requests
+      - paragraph [ref=e16]: Verify member identification documents.
+    - generic [ref=e17]:
+      - generic [ref=e18]: 
+      - text: No pending requests. All members are verified.
+  - navigation "Bottom navigation" [ref=e19]:
+    - generic [ref=e20]:
+      - link " Deposit" [ref=e21] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/deposit
+        - generic [ref=e22]: 
+        - generic [ref=e23]: Deposit
+      - link " Invest" [ref=e24] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/investment
+        - generic [ref=e25]: 
+        - generic [ref=e26]: Invest
+      - link " Home" [ref=e27] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - generic [ref=e28]: 
+        - generic [ref=e29]: Home
+      - link " Withdraw" [ref=e30] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/withdraw
+        - generic [ref=e31]: 
+        - generic [ref=e32]: Withdraw
+      - link " Transfer" [ref=e33] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/transfer
+        - generic [ref=e34]: 
+        - generic [ref=e35]: Transfer

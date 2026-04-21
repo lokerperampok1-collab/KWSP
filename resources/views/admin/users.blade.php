@@ -3,6 +3,12 @@
 @section('title', 'Manage Users | Admin')
 
 @section('content')
+<div style="margin-bottom: 20px;">
+    <a href="{{ route('admin.index') }}" class="gmtd-btn" style="background-color: #f1f5f9; color: #334155; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; font-weight: 600; text-decoration: none;">
+        <i class="fa fa-arrow-left"></i> Kembali ke Dashboard
+    </a>
+</div>
+
 <div class="gmtd-pagehead">
     <h1><i class="fa fa-users"></i> Member Management</h1>
     <p>View and manage all members of the platform.</p>
@@ -81,35 +87,111 @@
     {{ $users->links() }}
 </div>
 
-<!-- Scripts for Admin Actions -->
-<script>
-function adjustBalance(userId, name, current) {
-    let amount = prompt("Adjust balance for " + name + " (Current: RM" + current + "). Enter positive for add, negative for sub:", "0");
-    if (amount !== null && !isNaN(amount) && amount != 0) {
-        let form = document.createElement('form');
-        form.method = 'POST';
-        form.action = "{{ route('admin.index') }}/users/" + userId + "/balance";
-        form.innerHTML = `
-            @csrf
-            <input type="hidden" name="amount" value="${amount}">
-        `;
-        document.body.appendChild(form);
-        form.submit();
+<!-- Custom Admin Modals -->
+<style>
+    .admin-modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(4px);
+        display: none; place-items: center; z-index: 9999;
+        transition: all 0.3s ease;
     }
+    .admin-modal-overlay.active { display: grid; }
+    .admin-modal-card {
+        background: white; border-radius: 20px; padding: 32px;
+        width: 100%; max-width: 420px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        animation: modalScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes modalScale {
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+    .admin-modal-title {
+        color: #0f172a; font-size: 20px; font-weight: 800; margin-bottom: 8px;
+    }
+    .admin-modal-sub {
+        color: #64748b; font-size: 14px; margin-bottom: 24px; line-height: 1.5;
+    }
+    .admin-modal-actions {
+        margin-top: 28px; display: flex; justify-content: flex-end; gap: 12px;
+    }
+</style>
+
+<!-- Balance Modal -->
+<div id="balanceModal" class="admin-modal-overlay">
+    <div class="admin-modal-card">
+        <h3 class="admin-modal-title">Urus Baki Pengguna</h3>
+        <p class="admin-modal-sub">
+            Melaraskan baki untuk <span id="balanceUserName" style="font-weight:700; color:#1455B7;"></span>.<br>
+            Baki semasa: <span id="balanceUserCurrent" style="font-weight:700;"></span>
+        </p>
+
+        <form id="balanceForm" method="POST" action="" class="gmt-form">
+            @csrf
+            <div class="gmt-field">
+                <label class="gmt-label">Jumlah (Positif + / Negatif -)</label>
+                <input type="number" step="0.01" name="amount" id="balanceAmountInput" class="gmt-input" placeholder="Contoh: 100.00 atau -50.00" required autofocus>
+            </div>
+            
+            <div class="admin-modal-actions">
+                <button type="button" class="gmtd-btn" style="border-color:#e2e8f0; color:#64748b;" onclick="closeModal('balanceModal')">Batal</button>
+                <button type="submit" class="gmtd-btn gmtd-btn--primary">Simpan Perubahan</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Password Modal -->
+<div id="passwordModal" class="admin-modal-overlay">
+    <div class="admin-modal-card">
+        <h3 class="admin-modal-title">Set Semula Kata Laluan</h3>
+        <p class="admin-modal-sub">Menukar kata laluan untuk <span id="passwordUserName" style="font-weight:700; color:#1455B7;"></span>.</p>
+
+        <form id="passwordForm" method="POST" action="" class="gmt-form">
+            @csrf
+            <div class="gmt-field">
+                <label class="gmt-label">Kata Laluan Baharu</label>
+                <input type="text" name="password" id="passwordInput" class="gmt-input" value="12345678" required>
+            </div>
+            
+            <div class="admin-modal-actions">
+                <button type="button" class="gmtd-btn" style="border-color:#e2e8f0; color:#64748b;" onclick="closeModal('passwordModal')">Batal</button>
+                <button type="submit" class="gmtd-btn gmtd-btn--primary">Kemaskini Kata Laluan</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function openModal(id) {
+    document.getElementById(id).classList.add('active');
+    const input = document.getElementById(id).querySelector('input:not([type="hidden"])');
+    if(input) setTimeout(() => input.focus(), 100);
+}
+
+function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+}
+
+function adjustBalance(userId, name, current) {
+    document.getElementById('balanceUserName').innerText = name;
+    document.getElementById('balanceUserCurrent').innerText = 'RM ' + parseFloat(current).toLocaleString(undefined, {minimumFractionDigits: 2});
+    document.getElementById('balanceForm').action = "{{ route('admin.index') }}/users/" + userId + "/balance";
+    document.getElementById('balanceAmountInput').value = '';
+    openModal('balanceModal');
 }
 
 function resetPassword(userId, name) {
-    let password = prompt("Reset password for " + name + ":", "12345678");
-    if (password !== null && password.length >= 8) {
-        let form = document.createElement('form');
-        form.method = 'POST';
-        form.action = "{{ route('admin.index') }}/users/" + userId + "/reset-password";
-        form.innerHTML = `
-            @csrf
-            <input type="hidden" name="password" value="${password}">
-        `;
-        document.body.appendChild(form);
-        form.submit();
+    document.getElementById('passwordUserName').innerText = name;
+    document.getElementById('passwordForm').action = "{{ route('admin.index') }}/users/" + userId + "/reset-password";
+    document.getElementById('passwordInput').value = '12345678';
+    openModal('passwordModal');
+}
+
+// Close modal on click outside
+window.onclick = function(event) {
+    if (event.target.classList.contains('admin-modal-overlay')) {
+        event.target.classList.remove('active');
     }
 }
 </script>

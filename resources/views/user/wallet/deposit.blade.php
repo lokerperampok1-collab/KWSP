@@ -56,4 +56,48 @@
         </form>
     </div>
 </section>
+
+<div class="gmtd-pagehead" style="margin-top: 30px;">
+    <h1><i class="fa fa-history"></i> Riwayat Deposit</h1>
+    <p>Senarai permintaan deposit anda yang terkini.</p>
+</div>
+
+<section class="gmtd-surface gmtd-surface--soft">
+    <div class="gmtd-stack">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Tarikh</th>
+                        <th>Jumlah (RM)</th>
+                        <th>Nota</th>
+                        <th class="text-center">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse($transactions as $tx)
+                        <tr>
+                            <td class="text-nowrap">{{ $tx->created_at->format('d M Y, h:i A') }}</td>
+                            <td class="font-bold">RM {{ number_format($tx->amount, 2) }}</td>
+                            <td class="text-sm">{{ $tx->note ?? '-' }}</td>
+                            <td class="text-center">
+                                @if($tx->status === 'pending')
+                                    <span class="badge badge-warning">Pending</span>
+                                @elseif($tx->status === 'approved')
+                                    <span class="badge badge-success">Approved</span>
+                                @else
+                                    <span class="badge badge-danger">Rejected</span>
+                                @endif
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="4" class="text-center py-4 text-muted small">Tiada riwayat deposit setakat ini.</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 @endsection

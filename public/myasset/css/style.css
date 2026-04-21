@@ -8,8 +8,8 @@
   --card: #ffffff;
   --bd: #e2e8f0;
   --tx: #0f172a;
-  --mut: #64748b;
-  --acc: #1455B7;
+  --mut: #526071;      /* Improved from #64748b */
+  --acc: #1d65d9;      /* Darkened blue for better contrast */
   --acc-deep: #00458C;
   --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 16px rgba(0,0,0,0.04);
   --topbar-h: 80px;
@@ -80,6 +80,10 @@ body {
   text-decoration: none;
   background: var(--acc) !important;
   color: white;
+}
+.topbar .top-actions .__tL:focus-visible {
+  outline: 3px solid #FFCC00;
+  outline-offset: 2px;
 }
 .topbar .top-actions .__tL:hover {
   transform: translateY(-2px);

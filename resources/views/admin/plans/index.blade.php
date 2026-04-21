@@ -3,6 +3,12 @@
 @section('title', 'Manage Investment Plans | KWSP Admin')
 
 @section('content')
+<div style="margin-bottom: 20px;">
+    <a href="{{ route('admin.index') }}" class="gmtd-btn" style="background-color: #f1f5f9; color: #334155; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; font-weight: 600; text-decoration: none;">
+        <i class="fa fa-arrow-left"></i> Kembali ke Dashboard
+    </a>
+</div>
+
 <div class="gmtd-pagehead">
     <h1><i class="fa fa-briefcase"></i> Investment Plans</h1>
     <p>Manage daily ROI plans for members.</p>
@@ -18,10 +24,11 @@
     <table class="gmtd-table">
         <thead>
             <tr>
+                <th>Tier</th>
                 <th>Plan Name</th>
-                <th>Daily ROI (%)</th>
+                <th>Price</th>
+                <th>Target Return</th>
                 <th>Duration</th>
-                <th>Min. Amount</th>
                 <th>Sort</th>
                 <th>Status</th>
                 <th>Actions</th>
@@ -30,10 +37,11 @@
         <tbody>
             @foreach($plans as $plan)
             <tr>
+                <td><span class="gmtd-badge">{{ $plan->tier }}</span></td>
                 <td><b>{{ $plan->name }}</b></td>
-                <td>{{ number_format($plan->roi_daily_percent, 2) }}%</td>
-                <td>{{ $plan->duration_days }} Days</td>
-                <td>RM {{ number_format($plan->min_amount, 2) }}</td>
+                <td>RM {{ number_format($plan->price, 2) }}</td>
+                <td>RM {{ number_format($plan->target_return, 2) }}</td>
+                <td>3-6 Jam</td>
                 <td>{{ $plan->sort_order }}</td>
                 <td>
                     @if($plan->status)

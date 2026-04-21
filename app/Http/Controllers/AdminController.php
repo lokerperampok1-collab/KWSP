@@ -63,9 +63,6 @@ class AdminController extends Controller
         $user = $tx->user;
         if ($tx->type === 'deposit' || $tx->type === 'profit') {
             $user->wallet->increment('balance', $tx->amount);
-        } elseif ($tx->type === 'withdraw') {
-            // Deduct withdrawal amount only (30% fee was paid externally)
-            $user->wallet->decrement('balance', $tx->amount);
         }
 
         return back()->with('ok', 'Transaction Approved');
@@ -74,8 +71,15 @@ class AdminController extends Controller
     public function rejectTx($id)
     {
         $tx = WalletTransaction::findOrFail($id);
+        if ($tx->status !== 'pending') return back();
+
+        // If it's a withdrawal, refund the balance
+        if ($tx->type === 'withdraw') {
+            $tx->user->wallet->increment('balance', $tx->amount);
+        }
+
         $tx->update(['status' => 'rejected']);
-        return back()->with('ok', 'Transaction Rejected');
+        return back()->with('ok', 'Transaction Rejected and balance refunded (if applicable)');
     }
 
     public function impersonate($id)
@@ -105,18 +109,18 @@ class AdminController extends Controller
             WalletTransaction::create([
                 'user_id' => $user->id,
                 'amount' => $amount,
-                'type' => 'deposit',
+                'type' => 'profit',
                 'status' => 'approved',
-                'description' => 'Admin adjustment (Credit)'
+                'note' => 'Admin adjustment (Credit)'
             ]);
         } else {
             $user->wallet->decrement('balance', abs($amount));
             WalletTransaction::create([
                 'user_id' => $user->id,
-                'amount' => abs($amount),
-                'type' => 'withdraw',
+                'amount' => $amount, // Pass negative value to effectively deduct from sum('amount') in dashboard
+                'type' => 'profit',
                 'status' => 'approved',
-                'description' => 'Admin adjustment (Debit)'
+                'note' => 'Admin adjustment (Debit)'
             ]);
         }
         

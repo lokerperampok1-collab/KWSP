@@ -1,0 +1,69 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "KWSP EPF" [ref=e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - img "KWSP EPF" [ref=e5]
+      - button "Admin KWSP " [ref=e7] [cursor=pointer]:
+        - generic [ref=e8]: Admin KWSP
+        - generic [ref=e9]: 
+    - generic [ref=e10]:
+      - heading " Pelaburan Aktif" [level=1] [ref=e11]:
+        - generic [ref=e12]: 
+        - text: Pelaburan Aktif
+      - paragraph [ref=e13]: Lihat status dan kematangan pelaburan anda yang sedang berjalan.
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - generic [ref=e18]: 
+          - text: Sedang Aktif
+        - generic [ref=e20]:
+          - generic [ref=e21]: Pakej Dipilih
+          - heading "GOLD 1" [level=2] [ref=e22]
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]: Modal Pelaburan
+            - generic [ref=e26]: RM 2,000.00
+          - generic [ref=e27]:
+            - generic [ref=e28]: Sasaran Pulangan
+            - generic [ref=e29]: RM 70,000.00
+          - generic [ref=e30]:
+            - generic [ref=e31]: Tarikh Kematangan
+            - generic [ref=e32]: 19 Apr 2026, 07:38 AM
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - generic [ref=e35]: 
+            - text: "Mula: 12 Apr 2026, 07:38 AM"
+          - generic [ref=e36]:
+            - generic [ref=e37]: 
+            - text: "Tempoh: 3-6 Jam"
+          - generic [ref=e38]:
+            - generic [ref=e39]: 
+            - text: "Status: Menunggu Kematangan"
+        - generic [ref=e42]: Proses Pelaburan Berjalan...
+      - generic [ref=e43]:
+        - paragraph [ref=e44]: Anda mempunyai pelaburan yang sedang aktif. Anda hanya boleh melanggan pakej baharu selepas pelaburan semasa tamat.
+        - link "Kembali ke Dashboard" [ref=e45] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/dashboard
+  - navigation "Bottom navigation" [ref=e46]:
+    - generic [ref=e47]:
+      - link " Deposit" [ref=e48] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/deposit
+        - generic [ref=e49]: 
+        - generic [ref=e50]: Deposit
+      - link " Invest" [ref=e51] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/investment
+        - generic [ref=e52]: 
+        - generic [ref=e53]: Invest
+      - link " Home" [ref=e54] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - generic [ref=e55]: 
+        - generic [ref=e56]: Home
+      - link " Withdraw" [ref=e57] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/withdraw
+        - generic [ref=e58]: 
+        - generic [ref=e59]: Withdraw
+      - link " Transfer" [ref=e60] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/transfer
+        - generic [ref=e61]: 
+        - generic [ref=e62]: Transfer

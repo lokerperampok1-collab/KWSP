@@ -1,0 +1,83 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "KWSP EPF" [ref=e4] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - img "KWSP EPF" [ref=e5]
+      - button "Admin KWSP " [ref=e7] [cursor=pointer]:
+        - generic [ref=e8]: Admin KWSP
+        - generic [ref=e9]: 
+    - generic [ref=e10]:
+      - heading " Pengeluaran RM" [level=1] [ref=e11]:
+        - generic [ref=e12]: 
+        - text: Pengeluaran RM
+      - paragraph [ref=e13]: Hantar permintaan pengeluaran ke akaun bank yang didaftarkan di profil anda.
+    - generic [ref=e15]:
+      - generic [ref=e17]: "Baki tersedia: RM 7,000.00"
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]: 
+          - strong [ref=e21]: Pengeluaran Dikunci
+        - paragraph [ref=e22]:
+          - text: Untuk membuka akses pengeluaran, anda dikenakan caj
+          - strong [ref=e23]: 30%
+          - text: daripada jumlah baki keuntungan anda.
+        - table [ref=e25]:
+          - rowgroup [ref=e26]:
+            - row "Jumlah Baki Keuntungan RM 7,000.00" [ref=e27]:
+              - cell "Jumlah Baki Keuntungan" [ref=e28]
+              - cell "RM 7,000.00" [ref=e29]
+            - row "Caj 30% RM 2,100.00" [ref=e30]:
+              - cell "Caj 30%" [ref=e31]
+              - cell "RM 2,100.00" [ref=e32]
+            - row "Jumlah Wajib Bayar RM 2,100.00" [ref=e33]:
+              - cell "Jumlah Wajib Bayar" [ref=e34]
+              - cell "RM 2,100.00" [ref=e35]
+        - paragraph [ref=e36]:
+          - generic [ref=e37]: 
+          - text: Sila hubungi admin untuk urusan pembayaran. Pengeluaran akan dibuka selepas pembayaran disahkan oleh admin.
+    - generic [ref=e38]:
+      - heading " Riwayat Pengeluaran" [level=1] [ref=e39]:
+        - generic [ref=e40]: 
+        - text: Riwayat Pengeluaran
+      - paragraph [ref=e41]: Senarai permintaan pengeluaran anda yang terkini.
+    - table [ref=e45]:
+      - rowgroup [ref=e46]:
+        - row "Tarikh Jumlah (RM) Maklumat Bank Status" [ref=e47]:
+          - columnheader "Tarikh" [ref=e48]
+          - columnheader "Jumlah (RM)" [ref=e49]
+          - columnheader "Maklumat Bank" [ref=e50]
+          - columnheader "Status" [ref=e51]
+      - rowgroup [ref=e52]:
+        - row "09 Apr 2026, 04:06 AM RM 5,000.00 P Approved" [ref=e53]:
+          - cell "09 Apr 2026, 04:06 AM" [ref=e54]
+          - cell "RM 5,000.00" [ref=e55]
+          - cell "P" [ref=e56]
+          - cell "Approved" [ref=e57]
+        - row "09 Apr 2026, 03:09 AM RM 5,000.00 - Approved" [ref=e58]:
+          - cell "09 Apr 2026, 03:09 AM" [ref=e59]
+          - cell "RM 5,000.00" [ref=e60]
+          - cell "-" [ref=e61]
+          - cell "Approved" [ref=e62]
+  - navigation "Bottom navigation" [ref=e63]:
+    - generic [ref=e64]:
+      - link " Deposit" [ref=e65] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/deposit
+        - generic [ref=e66]: 
+        - generic [ref=e67]: Deposit
+      - link " Invest" [ref=e68] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/investment
+        - generic [ref=e69]: 
+        - generic [ref=e70]: Invest
+      - link " Home" [ref=e71] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/dashboard
+        - generic [ref=e72]: 
+        - generic [ref=e73]: Home
+      - link " Withdraw" [ref=e74] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/withdraw
+        - generic [ref=e75]: 
+        - generic [ref=e76]: Withdraw
+      - link " Transfer" [ref=e77] [cursor=pointer]:
+        - /url: http://127.0.0.1:8000/wallet/transfer
+        - generic [ref=e78]: 
+        - generic [ref=e79]: Transfer

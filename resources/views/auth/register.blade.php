@@ -43,7 +43,7 @@
                 <!-- Country -->
                 <div class="gmt-field">
                     <label class="gmt-label" for="country_name">Negara</label>
-                    <input id="country_name" class="gmt-input" type="text" name="country_name" value="Malaysia" readonly style="background-color: #f3f4f6; cursor: pointer;">
+                    <input id="country_name" class="gmt-input" type="text" name="country_name" value="Malaysia" readonly style="background-color: #f3f4f6; cursor: not-allowed;">
                     <x-input-error :messages="$errors->get('country_name')" class="mt-2" />
                 </div>
 

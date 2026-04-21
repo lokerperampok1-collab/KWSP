@@ -14,7 +14,14 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased text-text-main leading-body">
+        <style>
+            /* Accessible Focus Rings */
+            :focus-visible {
+                outline: 3px solid var(--kwsp-blue-light);
+                outline-offset: 2px;
+            }
+        </style>
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
 

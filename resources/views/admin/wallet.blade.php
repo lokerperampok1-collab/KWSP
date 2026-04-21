@@ -3,6 +3,12 @@
 @section('title', 'Pending Transactions | Admin')
 
 @section('content')
+<div style="margin-bottom: 20px;">
+    <a href="{{ route('admin.index') }}" class="gmtd-btn" style="background-color: #f1f5f9; color: #334155; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; font-weight: 600; text-decoration: none;">
+        <i class="fa fa-arrow-left"></i> Kembali ke Dashboard
+    </a>
+</div>
+
 <div class="gmtd-pagehead">
     <h1><i class="fa fa-exchange"></i> Pending Transactions</h1>
     <p>Review and approve financial requests.</p>

@@ -6,11 +6,13 @@
     /* ── Brand Palette ── */
     --kwsp-blue-deep: #00458C;
     --kwsp-blue-action: #1455B7;
-    --kwsp-blue-light: #3B82F6;
+    --kwsp-blue-light: #1D65D9;  /* Darkened for 4.5:1 contrast */
     --kwsp-blue-pale: #DBEAFE;
     --kwsp-red: #DA291C;
     --kwsp-yellow: #FFCC00;
+    --kwsp-yellow-text: #92400E; /* For accessible text on light backgrounds */
     --kwsp-green: #10B981;
+    --kwsp-green-text: #065F46;  /* For accessible text on light backgrounds */
     --kwsp-green-pale: #D1FAE5;
 
     /* ── Surface Colors ── */
@@ -22,8 +24,12 @@
     /* ── Text ── */
     --text-main: #0f172a;
     --text-secondary: #334155;
-    --text-muted: #64748b;
-    --text-faint: #94a3b8;
+    --text-muted: #526071;      /* Improved contrast from #64748b */
+    --text-faint: #5d6b7d;      /* Improved contrast from #94a3b8 */
+
+    /* ── Typography Scale ── */
+    --leading-body: 1.6;
+    --leading-heading: 1.3;
 
     /* ── Borders & Dividers ── */
     --border-color: #e2e8f0;

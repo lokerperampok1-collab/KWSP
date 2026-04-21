@@ -15,7 +15,8 @@ class WalletController extends Controller
     // ── Deposit ──
     public function deposit()
     {
-        return view('user.wallet.deposit');
+        $transactions = Auth::user()->transactions()->where('type', 'deposit')->latest()->get();
+        return view('user.wallet.deposit', compact('transactions'));
     }
 
     public function depositPost(Request $request)
@@ -39,7 +40,8 @@ class WalletController extends Controller
     // ── Withdraw ──
     public function withdraw()
     {
-        return view('user.wallet.withdraw');
+        $transactions = Auth::user()->transactions()->where('type', 'withdraw')->latest()->get();
+        return view('user.wallet.withdraw', compact('transactions'));
     }
 
     public function withdrawPost(Request $request)
@@ -76,13 +78,17 @@ class WalletController extends Controller
             'note' => 'Bank: ' . $user->bank_name . ' | Akaun: ' . $user->bank_account . ($request->note ? ' | Nota: ' . $request->note : ''),
         ]);
 
+        // Immediate deduction
+        $user->wallet->decrement('balance', $amount);
+
         return redirect()->route('dashboard')->with('ok', 'Permintaan pengeluaran RM ' . number_format($amount, 2) . ' telah dihantar.');
     }
 
     // ── Transfer ──
     public function transfer()
     {
-        return view('user.wallet.transfer');
+        $transactions = Auth::user()->transactions()->whereIn('type', ['transfer_in', 'transfer_out'])->latest()->get();
+        return view('user.wallet.transfer', compact('transactions'));
     }
 
     public function transferPost(Request $request)

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 
-#[Fillable(['name', 'description', 'min_amount', 'max_amount', 'roi_daily_percent', 'duration_days', 'status', 'sort_order'])]
+#[Fillable(['tier', 'name', 'description', 'price', 'target_return', 'duration_days', 'status', 'sort_order'])]
 class InvestmentPlan extends Model
 {
     public function userInvestments()

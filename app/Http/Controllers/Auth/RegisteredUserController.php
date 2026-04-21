@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'country_name' => $request->country_name,
+            'country_name' => 'Malaysia',
             'currency_code' => 'MYR',
             'currency_symbol' => 'RM',
             'password' => Hash::make($request->password),

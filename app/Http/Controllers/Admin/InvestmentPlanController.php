@@ -31,11 +31,11 @@ class InvestmentPlanController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'tier' => 'required|string|in:BASIC,GOLD,DIAMOND,VVIP',
             'name' => 'required|string|max:120',
             'description' => 'nullable|string',
-            'min_amount' => 'required|numeric|min:0',
-            'max_amount' => 'nullable|numeric|gt:min_amount',
-            'roi_daily_percent' => 'required|numeric|min:0',
+            'price' => 'required|numeric|min:0',
+            'target_return' => 'required|numeric|min:0',
             'duration_days' => 'required|integer|min:1',
             'sort_order' => 'integer',
         ]);
@@ -58,11 +58,11 @@ class InvestmentPlanController extends Controller
     public function update(Request $request, InvestmentPlan $plan)
     {
         $data = $request->validate([
+            'tier' => 'required|string|in:BASIC,GOLD,DIAMOND,VVIP',
             'name' => 'required|string|max:120',
             'description' => 'nullable|string',
-            'min_amount' => 'required|numeric|min:0',
-            'max_amount' => 'nullable|numeric|gt:min_amount',
-            'roi_daily_percent' => 'required|numeric|min:0',
+            'price' => 'required|numeric|min:0',
+            'target_return' => 'required|numeric|min:0',
             'duration_days' => 'required|integer|min:1',
             'sort_order' => 'integer',
             'status' => 'boolean',
