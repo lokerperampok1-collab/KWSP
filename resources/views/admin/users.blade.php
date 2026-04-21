@@ -54,6 +54,9 @@
                 </td>
                 <td>
                     <div class="gmtd-actions" style="gap: 5px;">
+                        <a href="{{ route('admin.users.edit', $user->id) }}" class="gmtd-btn" style="padding: 6px 10px; font-size: 11px; background: #fffbeb; color: #92400e; border-color: #fef3c7;">
+                            <i class="fa fa-edit"></i> Edit
+                        </a>
                         <a href="{{ route('admin.users.impersonate', $user->id) }}" class="gmtd-btn" style="padding: 6px 10px; font-size: 11px; background: #eef6ff; color: #00458C; border-color: #d0e4ff;">
                             <i class="fa fa-user-secret"></i> Log In
                         </a>

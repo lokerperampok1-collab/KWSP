@@ -48,6 +48,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/wallet/{id}/reject', [AdminController::class, 'rejectTx'])->name('admin.wallet.reject');
 
         // User Management
+        Route::get('/users/{id}/edit', [AdminController::class, 'editUser'])->name('admin.users.edit');
+        Route::post('/users/{id}/update', [AdminController::class, 'updateUser'])->name('admin.users.update');
         Route::post('/users/{id}/balance', [AdminController::class, 'adjustBalance'])->name('admin.users.balance');
         Route::post('/users/{id}/reset-password', [AdminController::class, 'resetPassword'])->name('admin.users.reset_password');
 

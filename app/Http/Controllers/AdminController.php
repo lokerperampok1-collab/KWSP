@@ -25,6 +25,32 @@ class AdminController extends Controller
         return view('admin.users', compact('users'));
     }
 
+    public function editUser($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.users_edit', compact('user'));
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'phone' => 'nullable|string|max:20',
+            'role' => 'required|in:admin,user',
+            'bank_name' => 'nullable|string|max:255',
+            'bank_account' => 'nullable|string|max:255',
+            'status_kyc' => 'required|in:unsubmitted,pending,approved,rejected',
+            'is_withdraw_unlocked' => 'required|boolean',
+        ]);
+
+        $user->update($validated);
+
+        return redirect()->route('admin.users')->with('ok', 'Data profil ' . $user->name . ' berjaya dikemaskini.');
+    }
+
     public function kyc()
     {
         $requests = KycRequest::with('user')->where('status', 'pending')->latest()->get();
